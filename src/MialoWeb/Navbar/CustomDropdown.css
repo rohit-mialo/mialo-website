@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+.custom-dropdown {
+  display: flex;
+  width: 90vw;
+  max-height: 319px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.menu-section {
+  width: 30%;
+  background-color: #f0f0f0;
+  /* border-right: 1px solid #ccc; */
+  font-family: "Poppins";
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 15px;
+  font-size: 14px;
+  /* border-bottom: 1px solid #000; */
+  color: "#000620";
+  font-weight: bold;
+}
+.menu-item.active {
+  background-color: white; /* Background color for the active menu item */
+  color: black; /* Text color for better visibility */
+  /* border: 1px solid black; Set all borders to black */
+  /* border-right: 2px solid white; Set the right border to white */
+  /* position: relative; Enable positioning for pseudo-element */
+  /* margin-right: -2px; Pull the item to the right */
+  z-index: 1; /* Ensure it appears above the adjacent component */
+}
+
+.menu-item.active::after {
+  content: ""; /* Create an empty pseudo-element */
+  position: absolute; /* Position it absolutely */
+  right: -2px; /* Position it to the right of the item */
+  top: 0; /* Align to the top */
+  height: 100%; /* Full height of the menu item */
+  width: 2px; /* Width of the right border */
+  background-color: white; /* Color of the right border */
+}
+
+.menu-item:hover {
+  background-color: #ddd;
+}
+
+.dropdown-content {
+  width: 70vw; /* Right panel width */
+  background-color: #ffffff;
+  padding: 20px;
+  /* border: 1px solid black; */
+  max-height: 392px; /* Set a maximum height for the dropdown content */
+  overflow-y: auto; /* Add vertical scroll if content overflows */
+}
+
+.dropdown-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.dropdown-option {
+  width: 45%; /* Two options per row */
+  font-size: 14px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-family: "Poppins";
+}
+
+.dropdown-option:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid black;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+  .custom-dropdown {
+    flex-direction: column;
+  }
+
+  .mobile-header {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .mobile-menu-toggle {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .dropdown-content.hide {
+    display: none;
+  }
+
+  .dropdown-box {
+    flex-direction: column;
+  }
+
+  .dropdown-option {
+    width: 100%;
+  }
+}
