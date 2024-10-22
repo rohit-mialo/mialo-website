@@ -1,8 +1,8 @@
-// import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+import routes from "routes";
 import HeaderTwo from "layouts/sections/page-sections/page-headers/components/HeaderTwo";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-// import routes from "routes";
 import Slider from "./HomePageComponents/logoSlider";
 import NumberSection from "./HomePageComponents/NumberSection";
 import AboutPlatform from "./HomePageComponents/AboutPlatfrom";
@@ -16,27 +16,50 @@ import CustomNavbar from "./Navbar/Navbar";
 
 function Home() {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Adjust the breakpoint as needed
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const scrollToSection = (id) => {
     console.log(`Navigating to: ${id}`);
     navigate(`/usecases#${id}`); // Navigate to /usecases with the section ID
   };
 
+  const testimonialsRef = useRef(null);
+  const scrollToTestimonials = () => {
+    if (testimonialsRef.current) {
+      testimonialsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <div style={{ width: "100%" }}>
-        {/* <DefaultNavbar
-          routes={routes}
-          action={{
-            type: "external",
-            route: "https://www.creative-tim.com/product/material-kit-pro-react",
-            label: "buy now",
-            color: "info",
-          }}
-          sticky
-        /> */}
-        <CustomNavbar onNavigate={scrollToSection} />
+        {isMobile ? (
+          <DefaultNavbar
+            routes={routes}
+            action={{
+              type: "external",
+              route: "#",
+              label: "TALK TO US",
+              color: "info",
+              onclick: scrollToTestimonials,
+            }}
+            sticky
+          />
+        ) : (
+          <CustomNavbar onNavigate={scrollToSection} onButtonClick={scrollToTestimonials} />
+        )}
         <div style={{ flex: 1, height: "100vh", backgroundColor: "white" }}>
-          <HeaderTwo style={{ flex: 1 }} />
+          <HeaderTwo style={{ flex: 1 }} onButtonClick={scrollToTestimonials} />
         </div>
 
         <Slider />
@@ -48,7 +71,9 @@ function Home() {
         <div style={{ backgroundColor: "white" }}>
           <Testimonials />
         </div>
-        <FormContext />
+        <div ref={testimonialsRef}>
+          <FormContext />
+        </div>
         <FooterThress />
       </div>
     </>

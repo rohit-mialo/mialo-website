@@ -64,8 +64,7 @@ function SectionTwo() {
                   navigate today’s complex landscape-easily and efficiently.
                 </MKTypography>
                 <Stack direction="row" spacing={1} mt={3}>
-                  <MKButton color="info">Book a Demo</MKButton>
-                  <MKButton color="info">Talk to Us</MKButton>
+                  <MKButton color="info">GET IN TOUCH</MKButton>
                 </Stack>
               </Grid>
               <Grid

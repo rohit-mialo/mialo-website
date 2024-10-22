@@ -77,8 +77,6 @@ function DetailedFooter({ content }) {
                       <MKTypography
                         component="a"
                         href={href}
-                        target="_blank"
-                        rel="noreferrer"
                         variant="button"
                         color="white"
                         fontWeight="regular"

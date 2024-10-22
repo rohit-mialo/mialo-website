@@ -33,8 +33,10 @@ const useWindowSize = () => {
   return windowSize;
 };
 
-const CustomNavbar = ({ onNavigate }) => {
+const CustomNavbar = ({ onNavigate, onButtonClick }) => {
   const [showDropdown, setShowDropdown] = useState(false); // State to manage custom dropdown visibility
+  const [showPlatformDropdown, setShowPlatformDropdown] = useState(false);
+  const [showIndustriesDropdown, setShowIndustriesDropdown] = useState(false);
   const dropdownRef = useRef(null); // Ref to track the custom dropdown
   const { width } = useWindowSize();
   const [navbarBg, setNavbarBg] = useState("transparent");
@@ -114,7 +116,11 @@ const CustomNavbar = ({ onNavigate }) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto" style={{ display: "flex", alignItems: "center" }}>
             {/* Simple Dropdown for Platform */}
-            <Dropdown>
+            <Dropdown
+              show={showPlatformDropdown}
+              onMouseEnter={() => setShowPlatformDropdown(true)}
+              onMouseLeave={() => setShowPlatformDropdown(false)}
+            >
               <Dropdown.Toggle
                 variant="link"
                 id="platform-dropdown"
@@ -171,12 +177,53 @@ const CustomNavbar = ({ onNavigate }) => {
               </div>
             )}
 
-            <Nav.Link
-              href="#docs"
-              style={{ color: "white", textDecoration: "none", fontSize: "18px" }}
+            <Dropdown
+              show={showIndustriesDropdown}
+              onMouseEnter={() => setShowIndustriesDropdown(true)}
+              onMouseLeave={() => setShowIndustriesDropdown(false)}
             >
-              Industries
-            </Nav.Link>
+              <Dropdown.Toggle
+                variant="link"
+                id="platform-dropdown"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  fontSize: "18px",
+                  lineHeight: "1.5",
+                }}
+              >
+                Industries
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                  Retail
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                  BFSI
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                  Infrastructure
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                  Logistics
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                  Security
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                  Healthcare
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                  Hospitality
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                  Agriculture
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                  Manufacturing
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
             <Nav.Link
               as={Link}
               to="/aboutus"
@@ -238,6 +285,7 @@ const CustomNavbar = ({ onNavigate }) => {
                 background.style.left = "-100%"; // Move the blue background out of view
                 text.style.color = "black"; // Change text color back to black
               }}
+              onClick={onButtonClick}
             >
               <span
                 style={{
@@ -257,7 +305,7 @@ const CustomNavbar = ({ onNavigate }) => {
                   zIndex: 1,
                 }}
               >
-                BOOK A DEMO
+                TALK TO US
               </span>
             </button>
           </Nav>
@@ -269,6 +317,7 @@ const CustomNavbar = ({ onNavigate }) => {
 
 CustomNavbar.propTypes = {
   onNavigate: PropTypes.func.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
 };
 
 export default CustomNavbar;

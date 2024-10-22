@@ -27,6 +27,7 @@ const CustomDropdown = ({ onNavigate }) => {
         { label: "Vehicle Dwell Time", id: "vehicle_dwell_time" },
         { label: "Vehicle Access Control", id: "vehicle_access_control" },
         { label: "Anomaly Detection", id: "anomaly_detection" },
+        { label: "Speed Monitoring", id: "speed_monitoring" },
       ],
     },
     {
@@ -50,6 +51,7 @@ const CustomDropdown = ({ onNavigate }) => {
     {
       title: "Access Control",
       options: [
+        { label: "ANPR & FR Based Access Control", id: "anpr_fr_based_access_control" },
         { label: "Authorized Employee Access", id: "authorized_employee_access" },
         { label: "Time & Attendance Tracking", id: "time_attendance_tracking" },
         { label: "Visitor Management", id: "visitor_management" },

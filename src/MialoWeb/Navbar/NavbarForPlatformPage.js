@@ -6,6 +6,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 // import MKButton from "components/MKButton";
 import Logo from "assets/images/mialo/Logo_Mialo.png";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 // Custom hook to get window size
 const useWindowSize = () => {
@@ -32,8 +33,10 @@ const useWindowSize = () => {
   return windowSize;
 };
 
-const CustomNavbarForPlatformPage = ({ onNavigate }) => {
+const CustomNavbarForPlatformPage = ({ onNavigate, onButtonClick }) => {
   const [showDropdown, setShowDropdown] = useState(false); // State to manage custom dropdown visibility
+  const [showPlatformDropdown, setShowPlatformDropdown] = useState(false);
+  const [showIndustriesDropdown, setShowIndustriesDropdown] = useState(false);
   const dropdownRef = useRef(null); // Ref to track the custom dropdown
   const { width } = useWindowSize();
 
@@ -85,7 +88,8 @@ const CustomNavbarForPlatformPage = ({ onNavigate }) => {
     >
       <Container fluid>
         <Navbar.Brand
-          href="/"
+          as={Link}
+          to="/"
           style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
         >
           <img src={Logo} alt="Mialo.AI Logo" style={{ height: "45.25px" }} />
@@ -95,7 +99,11 @@ const CustomNavbarForPlatformPage = ({ onNavigate }) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto" style={{ display: "flex", alignItems: "center" }}>
             {/* Simple Dropdown for Platform */}
-            <Dropdown>
+            <Dropdown
+              show={showPlatformDropdown}
+              onMouseEnter={() => setShowPlatformDropdown(true)}
+              onMouseLeave={() => setShowPlatformDropdown(false)}
+            >
               <Dropdown.Toggle
                 variant="link"
                 id="platform-dropdown"
@@ -109,7 +117,7 @@ const CustomNavbarForPlatformPage = ({ onNavigate }) => {
                 Platform
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item href="/platform" style={{ color: "white" }}>
+                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
                   Mialo.AI
                 </Dropdown.Item>
               </Dropdown.Menu>
@@ -133,7 +141,8 @@ const CustomNavbarForPlatformPage = ({ onNavigate }) => {
                 textDecoration: "none",
                 fontSize: "18px",
               }}
-              href="/solutions"
+              as={Link}
+              to="/solutions"
             >
               Solutions
             </Nav.Link>
@@ -151,20 +160,63 @@ const CustomNavbarForPlatformPage = ({ onNavigate }) => {
               </div>
             )}
 
-            <Nav.Link
-              href="#docs"
-              style={{ color: "white", textDecoration: "none", fontSize: "18px" }}
+            <Dropdown
+              show={showIndustriesDropdown}
+              onMouseEnter={() => setShowIndustriesDropdown(true)}
+              onMouseLeave={() => setShowIndustriesDropdown(false)}
             >
-              Industries
-            </Nav.Link>
+              <Dropdown.Toggle
+                variant="link"
+                id="platform-dropdown"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  fontSize: "18px",
+                  lineHeight: "1.5",
+                }}
+              >
+                Industries
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                  Retail
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                  BFSI
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                  Infrastructure
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                  Logistics
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                  Security
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                  Healthcare
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                  Hospitality
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                  Agriculture
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                  Manufacturing
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
             <Nav.Link
-              href="/aboutus"
+              as={Link}
+              to="/aboutus"
               style={{ color: "white", textDecoration: "none", fontSize: "18px" }}
             >
               About Us
             </Nav.Link>
             <Nav.Link
-              href="/contactUs"
+              as={Link}
+              to="/contactUs"
               style={{ color: "white", textDecoration: "none", fontSize: "18px" }}
             >
               Contact Us
@@ -204,6 +256,7 @@ const CustomNavbarForPlatformPage = ({ onNavigate }) => {
                 overflow: "hidden",
                 outline: "none",
               }}
+              onClick={onButtonClick}
               onMouseEnter={(e) => {
                 const background = e.currentTarget.querySelector("span:first-child");
                 const text = e.currentTarget.querySelector("span:last-child");
@@ -235,7 +288,7 @@ const CustomNavbarForPlatformPage = ({ onNavigate }) => {
                   zIndex: 1,
                 }}
               >
-                BOOK A DEMO
+                TALK TO US
               </span>
             </button>
           </Nav>
@@ -247,6 +300,7 @@ const CustomNavbarForPlatformPage = ({ onNavigate }) => {
 
 CustomNavbarForPlatformPage.propTypes = {
   onNavigate: PropTypes.func.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
 };
 
 export default CustomNavbarForPlatformPage;

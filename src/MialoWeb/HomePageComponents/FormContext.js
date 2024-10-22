@@ -75,6 +75,15 @@ function FormContext() {
                         <Grid item xs={12} pr={1} mb={3}>
                           <MKInput
                             variant="standard"
+                            label="Company"
+                            placeholder="Company Name"
+                            InputLabelProps={{ shrink: true }}
+                            fullWidth
+                          />
+                        </Grid>
+                        <Grid item xs={12} pr={1} mb={3}>
+                          <MKInput
+                            variant="standard"
                             label="Your message"
                             placeholder="I want to say that..."
                             InputLabelProps={{ shrink: true }}
@@ -130,9 +139,9 @@ function FormContext() {
                         Contact Information
                       </MKTypography>
                       <MKTypography variant="body2" color="white" opacity={0.8} mb={3}>
-                        Fill up the form and our Team will get back to you within 24 hours.
+                        Fill up the form and our team will get back to you shortly.
                       </MKTypography>
-                      <MKBox display="flex" p={1}>
+                      {/* <MKBox display="flex" p={1}>
                         <MKTypography variant="button" color="white">
                           <i className="fas fa-phone" />
                         </MKTypography>
@@ -177,8 +186,8 @@ function FormContext() {
                           Nasscom CoE IoT & AI, 3rd Floor, K-Tech, 29/A (E), 27th Main, 7th Cross
                           Rd, Sector 1, HSR Layout,Bengaluru, Karnataka 560102
                         </MKTypography>
-                      </MKBox>
-                      <MKBox mt={3}>
+                      </MKBox> */}
+                      {/* <MKBox mt={3}>
                         <MKButton variant="text" color="white" size="large" iconOnly>
                           <i className="fab fa-facebook" style={{ fontSize: "1.25rem" }} />
                         </MKButton>
@@ -191,7 +200,7 @@ function FormContext() {
                         <MKButton variant="text" color="white" size="large" iconOnly>
                           <i className="fab fa-instagram" style={{ fontSize: "1.25rem" }} />
                         </MKButton>
-                      </MKBox>
+                      </MKBox> */}
                     </MKBox>
                   </MKBox>
                 </Grid>

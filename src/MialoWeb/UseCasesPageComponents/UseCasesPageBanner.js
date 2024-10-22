@@ -58,7 +58,7 @@ function UseCasesPageBanner() {
                 comprehensive capabilities.
               </MKTypography>
               <Stack direction="row" spacing={1} mt={3}>
-                <MKButton color="info">Book a Demo</MKButton>
+                {/* <MKButton color="info">Book a Demo</MKButton> */}
                 <MKButton color="info">Talk to Us</MKButton>
               </Stack>
             </Grid>

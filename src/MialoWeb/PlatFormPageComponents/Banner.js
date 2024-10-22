@@ -7,13 +7,14 @@ import Stack from "@mui/material/Stack";
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import PropTypes from "prop-types";
 
 // Images
 import bgImage from "assets/images/mialo/platformBanner.png";
 // import { Box } from "@mui/material";
 // import MialoImage from "../../assets/images/Mialo.A.png";
 
-function HeaderOne() {
+function HeaderOne({ onButtonClick }) {
   return (
     <MKBox component="header" position="relative">
       <MKBox
@@ -63,15 +64,17 @@ function HeaderOne() {
                 >
                   Multimodal AI
                 </MKTypography>
-                in Decision Making
+                in Automation and Decision Making
               </MKTypography>
               <MKTypography variant="body1" color="black" opacity={0.8} pr={6} mr={6}>
                 Redefine the way your business analyzes data to optimize processes and automate
                 tasks with Mialo.AI platform.
               </MKTypography>
               <Stack direction="row" spacing={1} mt={3}>
-                <MKButton color="info">Book a Demo</MKButton>
-                <MKButton color="info">Talk to Us</MKButton>
+                {/* <MKButton color="info">Book a Demo</MKButton> */}
+                <MKButton color="info" onClick={onButtonClick}>
+                  Talk to Us
+                </MKButton>
               </Stack>
             </Grid>
             {/* <Grid
@@ -100,5 +103,9 @@ function HeaderOne() {
     </MKBox>
   );
 }
+
+HeaderOne.propTypes = {
+  onButtonClick: PropTypes.func.isRequired, // Add this line
+};
 
 export default HeaderOne;

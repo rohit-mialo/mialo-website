@@ -6,11 +6,12 @@ import Link from "@mui/material/Link";
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import PropTypes from "prop-types";
 
 // Import the video
 import bgVideo from "./HomeBannerVideo.mp4";
 
-function HeaderTwo() {
+function HeaderTwo({ onButtonClick }) {
   const typedJSRef = useRef(null);
 
   useEffect(() => {
@@ -202,11 +203,13 @@ function HeaderTwo() {
               Leverage multimodal AI for ‘X’ Analytics, integrating intelligence and automation
               across business workflows.
             </MKTypography>
-            <div style={{ flexDirection: "row", zIndex: 1 }}>
-              <MKButton color="white" style={{ marginRight: 10 }}>
+            <div style={{ zIndex: 1 }}>
+              {/* <MKButton color="white" style={{ marginRight: 10 }}>
                 Book a Demo
+              </MKButton> */}
+              <MKButton color="white" onClick={onButtonClick}>
+                Talk to Us
               </MKButton>
-              <MKButton color="white">Talk to Us</MKButton>
             </div>
           </Grid>
         </Container>
@@ -214,5 +217,9 @@ function HeaderTwo() {
     </MKBox>
   );
 }
+
+HeaderTwo.propTypes = {
+  onButtonClick: PropTypes.func.isRequired, // Add this line
+};
 
 export default HeaderTwo;

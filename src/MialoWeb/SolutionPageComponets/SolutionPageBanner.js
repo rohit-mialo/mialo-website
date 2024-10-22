@@ -7,13 +7,14 @@ import Stack from "@mui/material/Stack";
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import PropTypes from "prop-types";
 
 // Images
 import bgImage from "assets/images/mialo/Solutions_Banner.png";
 // import { Box } from "@mui/material";
 // import MialoImage from "../../assets/images/Mialo.A.png";
 
-function SolutionPageBanner() {
+function SolutionPageBanner({ onButtonClick }) {
   return (
     <MKBox component="header" position="relative">
       <MKBox
@@ -70,8 +71,10 @@ function SolutionPageBanner() {
                 business decisions.
               </MKTypography>
               <Stack direction="row" spacing={1} mt={3}>
-                <MKButton color="info">Book a Demo</MKButton>
-                <MKButton color="info">Talk to Us</MKButton>
+                {/* <MKButton color="info">Book a Demo</MKButton> */}
+                <MKButton color="info" onClick={onButtonClick}>
+                  Talk to Us
+                </MKButton>
               </Stack>
             </Grid>
             {/* <Grid
@@ -100,5 +103,9 @@ function SolutionPageBanner() {
     </MKBox>
   );
 }
+
+SolutionPageBanner.propTypes = {
+  onButtonClick: PropTypes.func.isRequired, // Add this line
+};
 
 export default SolutionPageBanner;

@@ -1,103 +1,95 @@
-// Material Kit 2 PRO React components
-import MKTypography from "components/MKTypography";
-
-// Material Kit 2 PRO React examples
-import DetailedFooter from "examples/Footers/DetailedFooter";
-
+import React from "react";
+import "./Footer.css"; // You can write the CSS inline or use a separate file for styles.
 import img from "assets/images/mialo/Logo_Mialo.png";
+import { Link } from "react-router-dom";
 
-function FooterOne() {
-  const date = new Date().getFullYear();
-
-  const footerContent = {
-    brand: {
-      name: "MATERIAL UI DESIGN",
-      description: "Enabling Human Senses in Machines with Multimodal AI",
-      image: img,
-    },
-    socials: [
-      {
-        icon: <i className="fab fa-facebook" />,
-        link: "https://www.facebook.com/CreativeTim/",
-      },
-      {
-        icon: <i className="fab fa-twitter" />,
-        link: "https://twitter.com/creativetim",
-      },
-      {
-        icon: <i className="fab fa-instagram" />,
-        link: "https://www.instagram.com/creativetimofficial/",
-      },
-      {
-        icon: <i className="fab fa-pinterest" />,
-        link: "https://ro.pinterest.com/thecreativetim/",
-      },
-      {
-        icon: <i className="fab fa-github" />,
-        link: "https://github.com/creativetimofficial",
-      },
-    ],
-    menus: [
-      {
-        name: "company",
-        items: [
-          { name: "About Us", href: "https://www.creative-tim.com" },
-          { name: "career", href: "https://www.creative-tim.com" },
-          { name: "contact", href: "https://www.creative-tim.com" },
-        ],
-      },
-      {
-        name: "Platform",
-        items: [
-          { name: "Mialo.AI", href: "https://www.creative-tim.com" },
-          // { name: "register", href: "https://www.creative-tim.com" },
-          // { name: "add list", href: "https://www.creative-tim.com" },
-        ],
-      },
-      {
-        name: "Solutions",
-        items: [
-          { name: "Shopper Analytics", href: "https://www.creative-tim.com" },
-          { name: "Smart Parking", href: "https://www.creative-tim.com" },
-          { name: "Smart Security", href: "https://services.creative-tim.com" },
-          { name: "Access Control", href: "https://www.creative-tim.com" },
-          { name: "Document Processing", href: "https://www.creative-tim.com" },
-          { name: "Gen & Conversational AI", href: "https://www.creative-tim.com" },
-        ],
-      },
-      // {
-      //   name: "resources",
-      //   items: [
-      //     { name: "blog", href: "https://www.creative-tim.com" },
-      //     { name: "services", href: "https://www.creative-tim.com" },
-      //     { name: "product", href: "https://www.creative-tim.com" },
-      //     { name: "pricing", href: "https://www.creative-tim.com" },
-      //   ],
-      // },
-    ],
-    copyright: (
-      <MKTypography variant="button" color="white">
-        Copyright &copy; {date}{" "}
-        <MKTypography
-          component="a"
-          href="#"
-          target="_blank"
-          rel="noreferrer"
-          variant="button"
-          color="white"
-        >
-          Mialo Technologies
-        </MKTypography>
-        .
-      </MKTypography>
-    ),
-  };
-
+const FooterThress = () => {
   return (
-    <div style={{ padding: "50px", backgroundColor: "#000620" }}>
-      <DetailedFooter content={footerContent} />
-    </div>
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-column">
+          <h2 className="footer-logo">
+            <img src={img} alt="mialo logo" style={{ height: "90px", width: "150px" }} />
+          </h2>
+          <p className="footer-tagline">Enabling Human Senses in Machines with Multimodal AI</p>
+          <div className="social-links">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin" />
+            </a>
+          </div>
+        </div>
+        <div className="footer-column">
+          <h3>Company</h3>
+          <ul>
+            <li>
+              <Link to="/aboutus">About Us</Link>
+            </li>
+            <li>
+              <Link to="">Career</Link>
+            </li>
+            <li>
+              <Link to="/contactUs">Contact</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="footer-column">
+          <h3>Platform</h3>
+          <ul>
+            <li>
+              <Link to="/platform">Mialo.AI</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="footer-column">
+          <h3>Solutions</h3>
+          <ul>
+            <li>
+              <Link to="/solutions">Shopper Analytics</Link>
+            </li>
+            <li>
+              <Link to="/solutions">Smart Parking</Link>
+            </li>
+            <li>
+              <Link to="/solutions">Smart Security</Link>
+            </li>
+            <li>
+              <Link to="/solutions">Access Control</Link>
+            </li>
+            <li>
+              <Link to="/solutions">Document Processing</Link>
+            </li>
+            <li>
+              <Link to="/solutions">Gen AI & Conversational AI</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="footer-column contact-info">
+          <h3>Contact Us</h3>
+          <div style={{ display: "flex" }}>
+            <i
+              className="fas fa-map-marker-alt"
+              style={{ float: "left", marginTop: "15px", marginRight: "8px" }}
+            />
+            <p>
+              Nasscom CoE IoT & AI, 3rd Floor, K-Tech, 29/A (E), 27th Main, 7th Cross Rd, Sector 1,
+              HSR Layout,Bengaluru, Karnataka 560102
+            </p>
+          </div>
+          <p>
+            <i className="fas fa-phone" />
+            Phone: (+91) 96866 00130
+          </p>
+          <p>
+            <i className="fas fa-envelope" />
+            Email: <Link to="mailto:info@mialotech.com">info@mialotech.com</Link>
+          </p>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>&copy; 2024 Mialo Technologies.</p>
+      </div>
+    </footer>
   );
-}
+};
 
-export default FooterOne;
+export default FooterThress;

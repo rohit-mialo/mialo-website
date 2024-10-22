@@ -1,17 +1,12 @@
 import React from "react";
+import cloudhop from "assets/images/mialo/cloudhop-removebg-preview.png";
+import Emisoft from "assets/images/mialo/Emisoft-removebg-preview.png";
+import Nasscom from "assets/images/mialo/Nasscom-removebg.png";
 
 const Slider = () => {
-  const images = [
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
-  ];
+  const images = [cloudhop, Emisoft, Nasscom];
 
-  const duplicatedImages = [...images, ...images]; // To create seamless scrolling effect
+  const duplicatedImages = [...images, ...images, ...images, ...images, ...images]; // To create seamless scrolling effect
 
   const containerStyle = {
     display: "flex",

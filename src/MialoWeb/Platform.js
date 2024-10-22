@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import HeaderOne from "./PlatFormPageComponents/Banner";
 import Slider from "./HomePageComponents/logoSlider";
 import SectionTwo from "./PlatFormPageComponents/SectionTwo";
 import CardRaised from "./PlatFormPageComponents/CardRaised";
-// import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-// import routes from "routes";
+import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+import routes from "routes";
 import Faq from "./PlatFormPageComponents/Faq";
 import Industries from "./PlatFormPageComponents/Industries";
 import FooterThress from "./HomePageComponents/FooterThress";
@@ -19,25 +19,51 @@ import AiBlocks from "./PlatFormPageComponents/AiBlocks";
 import CustomNavbarForPlatformPage from "./Navbar/NavbarForPlatformPage";
 
 function Platform() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Adjust the breakpoint as needed
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const navigate = useNavigate();
   const scrollToSection = (id) => {
     console.log(`Navigating to: ${id}`);
     navigate(`/usecases#${id}`); // Navigate to /usecases with the section ID
   };
+
+  const testimonialsRef = useRef(null);
+  const scrollToTestimonials = () => {
+    if (testimonialsRef.current) {
+      testimonialsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div>
-      {/* <DefaultNavbar
-        routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-pro-react",
-          label: "buy now",
-          color: "info",
-        }}
-        sticky
-      /> */}
-      <CustomNavbarForPlatformPage onNavigate={scrollToSection} />
-      <HeaderOne />
+      {isMobile ? (
+        <DefaultNavbar
+          routes={routes}
+          action={{
+            type: "external",
+            route: "#",
+            label: "TALK TO US",
+            color: "info",
+            onclick: scrollToTestimonials,
+          }}
+          sticky
+        />
+      ) : (
+        <CustomNavbarForPlatformPage
+          onNavigate={scrollToSection}
+          onButtonClick={scrollToTestimonials}
+        />
+      )}
+      <HeaderOne onButtonClick={scrollToTestimonials} />
       <Slider />
       <NumberSection />
       <SectionTwo />
@@ -53,7 +79,9 @@ function Platform() {
       <div style={{ backgroundColor: "white" }}>
         <Testimonials />
       </div>
-      <ContactForPlatform />
+      <div ref={testimonialsRef}>
+        <ContactForPlatform />
+      </div>
       <FooterThress />
     </div>
   );

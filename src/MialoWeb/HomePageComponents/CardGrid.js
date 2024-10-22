@@ -16,6 +16,7 @@ import img3 from "assets/images/mialo/Smart_Parking.png";
 import img4 from "assets/images/mialo/Smart_Security.png";
 import img5 from "assets/images/mialo/Access_Control.png";
 import img6 from "assets/images/mialo/Document_Processing.png";
+import { Link } from "react-router-dom";
 
 // Sample card data
 const cardData = [
@@ -27,7 +28,7 @@ const cardData = [
     route: "/sections/page-sections/general-cards",
   },
   {
-    image: img2,
+    image: img3,
     title: "Smart Parking",
     description: (
       <>
@@ -39,7 +40,7 @@ const cardData = [
     route: "/sections/page-sections/general-cards",
   },
   {
-    image: img3,
+    image: img2,
     title: "Generative & Conversational AI",
     description:
       "Enhance interactions by comprehending and processing language nuances, boosting efficiency in real-time communication.",
@@ -97,9 +98,10 @@ function CardGrid() {
                         description={card.description}
                         action={{
                           type: "internal",
-                          route: card.route,
+                          route: "/solutions", // Set the route to /solutions
                           color: "info",
                           label: "Learn more",
+                          component: Link, // Use Link component for navigation
                         }}
                         sx={{
                           height: "100%", // Ensure the card takes full height of the container

@@ -10,31 +10,34 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 // Images
-import bgImage1 from "assets/images/examples/color1.jpg";
-import bgImage2 from "assets/images/examples/color3.jpg";
-
+import img1 from "assets/images/mialo/Shopper_Anaytics.png";
+import img2 from "assets/images/mialo/Generative_AI.png";
+import img3 from "assets/images/mialo/Smart_Parking.png";
+import img4 from "assets/images/mialo/Smart_Security.png";
+import img5 from "assets/images/mialo/Access_Control.png";
+import img6 from "assets/images/mialo/Document_Processing.png";
 const solutionsData = [
   {
     title: "Shopper Analytics",
     description:
       "Unlock actionable insights into customer behavior, demographics, and buying journeys to optimize retail strategies.",
-    image: bgImage1,
+    image: img1,
     items: [
       "Shopper Demographics",
-      "Shopper Behavioral Analysis",
+      "Behavioral Analysis",
       "Footfall Intelligence",
       "Shopper Journey Analysis",
-      "Service Quality & Experience",
-      "Automatic Visual Inspection & Compliance",
+      "Customer Experience",
+      "Inspection & Compliance",
       "Store Security",
-      "Queue Analysis & Management",
+      "Queue Analysis",
     ],
   },
   {
     title: "Smart Parking",
     description:
       "Streamline vehicle management for a smoother, hassle-free more efficient parking management experience.",
-    image: bgImage2,
+    image: img3,
     items: [
       "Entrance & Exit Logs",
       "Parking Management",
@@ -47,15 +50,15 @@ const solutionsData = [
     title: "Smart Security",
     description:
       "Ensure complete security across your premises by monitoring objects and people in real-time and making intelligent, informed decisions using Artificial Intelligence.",
-    image: bgImage1,
+    image: img4,
     items: [
       "Human Identification",
       "People Counting",
       "Crowd Monitoring",
       "Theft & Fraud Detection",
       "Visitor Management",
-      "Time & Attendance Tracking",
-      "Threat Detection & Response",
+      "Time & Attendance",
+      "Threat Detection",
       "Intrusion Detection",
       "Access Control",
       "Anomaly Detection",
@@ -68,25 +71,20 @@ const solutionsData = [
     title: "Access Control",
     description:
       "Simplify access management for humans and vehicles leveraging Facial Recognition & Number Plate Reading technology, respectively to prevent unauthorized access.",
-    image: bgImage2,
-    items: [
-      "Authorized Employee Access",
-      "Time & Attendance Tracking",
-      "Visitor Management",
-      "Facial Recognition",
-    ],
+    image: img5,
+    items: ["Authorized Access", "Time & Attendance", "Visitor Management", "Facial Recognition"],
   },
   {
     title: "AI-Powered Document Processing",
     description:
       "Extract, analyze, and process structured and unstructured data from various types of documents through automation.",
-    image: bgImage1,
+    image: img6,
     items: [
       "Document Pre-processing",
-      "Invoice Processing & Management",
+      "Invoice Processing",
       "Document Classification",
-      "Automated Data Extraction & Parsing",
-      "Document Review & Analysis",
+      "Data Extraction",
+      "Review & Analysis",
       "Fraud Detection",
       "Financial Statement Analysis",
     ],
@@ -95,7 +93,7 @@ const solutionsData = [
     title: "Generative & Conversational AI",
     description:
       "Enhance interactions by comprehending and processing language nuances, boosting efficiency in real-time communication.",
-    image: bgImage2,
+    image: img2,
     items: ["Wake-Word Recognition", "Speech-to-Text", "Summary Generation", "Smart Chatbot"],
   },
 ];
@@ -115,12 +113,8 @@ function SolutionPageContent() {
           lg={5}
           sx={{ mx: "auto", textAlign: "center" }}
         >
-          <MKTypography variant="h3" mt={3}>
-            How To Handle Them
-          </MKTypography>
-          <MKTypography variant="body2" color="text">
-            We&apos;re constantly trying to express ourselves and actualize our dreams. Don&apos;t
-            stop.
+          <MKTypography variant="h3" mt={3} color="black">
+            Customized<br></br> AI Solutions for Every Industry
           </MKTypography>
         </Grid>
 
@@ -131,7 +125,7 @@ function SolutionPageContent() {
               {index % 2 === 0 ? (
                 <>
                   <Grid item xs={12} md={4} sx={{ ml: "auto" }}>
-                    <MKBox p={{ xs: 0, lg: 6 }}>
+                    <MKBox>
                       <MKBox
                         component="img"
                         src={solution.image}
@@ -142,7 +136,7 @@ function SolutionPageContent() {
                     </MKBox>
                   </Grid>
                   <Grid item xs={12} md={5} sx={{ mr: "auto", ml: { xs: 0, md: 6 } }}>
-                    <MKTypography variant="h3" color="black">
+                    <MKTypography variant="h4" color="black">
                       {solution.title}
                     </MKTypography>
                     <MKTypography variant="body2" color="black" opacity={0.8}>
@@ -165,7 +159,7 @@ function SolutionPageContent() {
               ) : (
                 <>
                   <Grid item xs={12} md={5} sx={{ ml: "auto", mr: { xs: 0, md: 6 } }}>
-                    <MKTypography variant="h3" color="black">
+                    <MKTypography variant="h4" color="black">
                       {solution.title}
                     </MKTypography>
                     <MKTypography variant="body2" color="black" opacity={0.8}>
@@ -185,7 +179,7 @@ function SolutionPageContent() {
                     </Grid>
                   </Grid>
                   <Grid item xs={12} md={4} sx={{ mr: "auto" }}>
-                    <MKBox p={{ xs: 0, lg: 6 }}>
+                    <MKBox>
                       <MKBox
                         component="img"
                         src={solution.image}
