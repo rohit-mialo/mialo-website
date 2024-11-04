@@ -8,7 +8,7 @@ import Stack from "@mui/material/Stack";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import Box from "@mui/material/Box";
-import MialoImage from "assets/images/mialo/documentRotate.png";
+import MialoImage from "assets/images/mialo/Who_we_are.png";
 
 // Coworking page component
 // import AboutUsOption from "pages/LandingPages/Coworking/components/AboutUsOption";
@@ -20,9 +20,6 @@ function AboutUsContent() {
         <Container>
           <Grid container alignItems="center">
             <Grid item xs={12} lg={5}>
-              <MKTypography fontWeight="bold" my={2} sx={{ fontSize: "3.2rem", color: "#000620" }}>
-                About Mialo.AI
-              </MKTypography>
               <MKTypography variant="body2" mb={6} style={{ color: "black" }}>
                 In today’s fast-evolving world, businesses must constantly adapt and innovate to
                 stay competitive!

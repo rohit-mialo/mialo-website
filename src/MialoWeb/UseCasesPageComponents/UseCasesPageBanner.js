@@ -1,11 +1,11 @@
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
+// import Stack from "@mui/material/Stack";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
-import MKButton from "components/MKButton";
+// import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
 // Images
@@ -57,10 +57,10 @@ function UseCasesPageBanner() {
                 Tackle unique business challenges and gain intelligent insights with Mialo.AI&#39;s
                 comprehensive capabilities.
               </MKTypography>
-              <Stack direction="row" spacing={1} mt={3}>
-                {/* <MKButton color="info">Book a Demo</MKButton> */}
+              {/* <Stack direction="row" spacing={1} mt={3}>
+                <MKButton color="info">Book a Demo</MKButton>
                 <MKButton color="info">Talk to Us</MKButton>
-              </Stack>
+              </Stack> */}
             </Grid>
             {/* <Grid
               item

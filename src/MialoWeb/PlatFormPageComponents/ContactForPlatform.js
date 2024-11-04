@@ -130,67 +130,8 @@ function ContactForPlatform() {
                         Contact Information
                       </MKTypography>
                       <MKTypography variant="body2" color="white" opacity={0.8} mb={3}>
-                        Fill up the form and our Team will get back to you within 24 hours.
+                        Fill up the form and our team will get back to you shortly.
                       </MKTypography>
-                      <MKBox display="flex" p={1}>
-                        <MKTypography variant="button" color="white">
-                          <i className="fas fa-phone" />
-                        </MKTypography>
-                        <MKTypography
-                          component="span"
-                          variant="button"
-                          color="white"
-                          opacity={0.8}
-                          ml={2}
-                          fontWeight="regular"
-                        >
-                          (+40) 772 100 200
-                        </MKTypography>
-                      </MKBox>
-                      <MKBox display="flex" color="white" p={1}>
-                        <MKTypography variant="button" color="white">
-                          <i className="fas fa-envelope" />
-                        </MKTypography>
-                        <MKTypography
-                          component="span"
-                          variant="button"
-                          color="white"
-                          opacity={0.8}
-                          ml={2}
-                          fontWeight="regular"
-                        >
-                          hello@creative-tim.com
-                        </MKTypography>
-                      </MKBox>
-                      <MKBox display="flex" color="white" p={1}>
-                        <MKTypography variant="button" color="white">
-                          <i className="fas fa-map-marker-alt" />
-                        </MKTypography>
-                        <MKTypography
-                          component="span"
-                          variant="button"
-                          color="white"
-                          opacity={0.8}
-                          ml={2}
-                          fontWeight="regular"
-                        >
-                          Dyonisie Wolf Bucharest, RO 010458
-                        </MKTypography>
-                      </MKBox>
-                      <MKBox mt={3}>
-                        <MKButton variant="text" color="white" size="large" iconOnly>
-                          <i className="fab fa-facebook" style={{ fontSize: "1.25rem" }} />
-                        </MKButton>
-                        <MKButton variant="text" color="white" size="large" iconOnly>
-                          <i className="fab fa-twitter" style={{ fontSize: "1.25rem" }} />
-                        </MKButton>
-                        <MKButton variant="text" color="white" size="large" iconOnly>
-                          <i className="fab fa-dribbble" style={{ fontSize: "1.25rem" }} />
-                        </MKButton>
-                        <MKButton variant="text" color="white" size="large" iconOnly>
-                          <i className="fab fa-instagram" style={{ fontSize: "1.25rem" }} />
-                        </MKButton>
-                      </MKBox>
                     </MKBox>
                   </MKBox>
                 </Grid>

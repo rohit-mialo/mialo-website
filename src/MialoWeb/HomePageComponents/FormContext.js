@@ -141,66 +141,6 @@ function FormContext() {
                       <MKTypography variant="body2" color="white" opacity={0.8} mb={3}>
                         Fill up the form and our team will get back to you shortly.
                       </MKTypography>
-                      {/* <MKBox display="flex" p={1}>
-                        <MKTypography variant="button" color="white">
-                          <i className="fas fa-phone" />
-                        </MKTypography>
-                        <MKTypography
-                          component="span"
-                          variant="button"
-                          color="white"
-                          opacity={0.8}
-                          ml={2}
-                          fontWeight="regular"
-                        >
-                          (+91) 96866 00130
-                        </MKTypography>
-                      </MKBox>
-                      <MKBox display="flex" color="white" p={1}>
-                        <MKTypography variant="button" color="white">
-                          <i className="fas fa-envelope" />
-                        </MKTypography>
-                        <MKTypography
-                          component="span"
-                          variant="button"
-                          color="white"
-                          opacity={0.8}
-                          ml={2}
-                          fontWeight="regular"
-                        >
-                          info@mialotech.com
-                        </MKTypography>
-                      </MKBox>
-                      <MKBox display="flex" color="white" p={1}>
-                        <MKTypography variant="button" color="white">
-                          <i className="fas fa-map-marker-alt" />
-                        </MKTypography>
-                        <MKTypography
-                          component="span"
-                          variant="button"
-                          color="white"
-                          opacity={0.8}
-                          ml={2}
-                          fontWeight="regular"
-                        >
-                          Nasscom CoE IoT & AI, 3rd Floor, K-Tech, 29/A (E), 27th Main, 7th Cross
-                          Rd, Sector 1, HSR Layout,Bengaluru, Karnataka 560102
-                        </MKTypography>
-                      </MKBox> */}
-                      {/* <MKBox mt={3}>
-                        <MKButton variant="text" color="white" size="large" iconOnly>
-                          <i className="fab fa-facebook" style={{ fontSize: "1.25rem" }} />
-                        </MKButton>
-                        <MKButton variant="text" color="white" size="large" iconOnly>
-                          <i className="fab fa-twitter" style={{ fontSize: "1.25rem" }} />
-                        </MKButton>
-                        <MKButton variant="text" color="white" size="large" iconOnly>
-                          <i className="fab fa-dribbble" style={{ fontSize: "1.25rem" }} />
-                        </MKButton>
-                        <MKButton variant="text" color="white" size="large" iconOnly>
-                          <i className="fab fa-instagram" style={{ fontSize: "1.25rem" }} />
-                        </MKButton>
-                      </MKBox> */}
                     </MKBox>
                   </MKBox>
                 </Grid>

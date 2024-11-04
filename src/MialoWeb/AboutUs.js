@@ -34,7 +34,9 @@ function AboutUs() {
   const testimonialsRef = useRef(null);
   const scrollToTestimonials = () => {
     if (testimonialsRef.current) {
-      testimonialsRef.current.scrollIntoView({ behavior: "smooth" });
+      const targetPosition =
+        testimonialsRef.current.getBoundingClientRect().top + window.scrollY + 250; // Adjust 100px based on header height
+      window.scrollTo({ top: targetPosition, behavior: "smooth" });
     }
   };
   return (
