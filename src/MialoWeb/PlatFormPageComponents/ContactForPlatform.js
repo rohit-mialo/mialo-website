@@ -7,11 +7,69 @@ import MKBox from "components/MKBox";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
 
 // Images
 import bgImage from "assets/images/examples/blog2.jpg";
+import Swal from "sweetalert2";
 
 function ContactForPlatform() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    // Create the payload to send via emailjs
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_company: formData.company,
+      message: formData.message,
+    };
+
+    emailjs.send("service_ydkozpo", "template_ryhxi7j", templateParams, "bHun3mtnX_pHX6i77").then(
+      (result) => {
+        console.log("SUCCESS!", result.text);
+        // Optionally, clear the form or show success message
+        Swal.fire({
+          title: "SUCCESS!",
+          text: "Your Message sent successfully!",
+          icon: "success",
+        });
+
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          message: "",
+        });
+      },
+      (error) => {
+        console.log("FAILED...", error.text);
+
+        Swal.fire({
+          title: "ERROR!",
+          text: "Something went wrong try after sometime!",
+          icon: "error",
+        });
+      }
+    );
+  };
+
   return (
     <div style={{ paddingTop: "50px" }}>
       <div
@@ -30,7 +88,7 @@ function ContactForPlatform() {
           <br /> AI-Powered Insights?
         </MKTypography>
       </div>
-      <MKBox component="section" py={{ xs: 0, lg: 6 }}>
+      <MKBox component="section" py={{ xs: 0, lg: 6 }} sx={{ backgroundColor: "white" }}>
         <Container>
           <Grid container item px={6}>
             <MKBox
@@ -43,10 +101,10 @@ function ContactForPlatform() {
             >
               <Grid container spacing={3}>
                 <Grid item xs={12} lg={7}>
-                  <MKBox component="form" p={2} method="post">
+                  <MKBox component="form" p={2} onSubmit={sendEmail}>
                     <MKBox px={3} py={{ xs: 2, sm: 6 }}>
-                      <MKTypography variant="h2" mb={1}>
-                        Say Hi!
+                      <MKTypography variant="h2" mb={1} color="black">
+                        Send Us a Message
                       </MKTypography>
                       <MKTypography variant="body1" color="text" mb={2}>
                         We&apos;d like to talk with you.
@@ -57,19 +115,37 @@ function ContactForPlatform() {
                         <Grid item xs={12} pr={1} mb={3}>
                           <MKInput
                             variant="standard"
-                            label="My name is"
+                            label="Name"
                             placeholder="Full Name"
                             InputLabelProps={{ shrink: true }}
                             fullWidth
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
                           />
                         </Grid>
                         <Grid item xs={12} pr={1} mb={3}>
                           <MKInput
                             variant="standard"
-                            label="I'm looking for"
-                            placeholder="What you love"
+                            label="Email"
+                            placeholder="abc@xyz.com"
                             InputLabelProps={{ shrink: true }}
                             fullWidth
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                        </Grid>
+                        <Grid item xs={12} pr={1} mb={3}>
+                          <MKInput
+                            variant="standard"
+                            label="Company"
+                            placeholder="Company Name"
+                            InputLabelProps={{ shrink: true }}
+                            fullWidth
+                            name="company"
+                            value={formData.company}
+                            onChange={handleChange}
                           />
                         </Grid>
                         <Grid item xs={12} pr={1} mb={3}>
@@ -81,6 +157,9 @@ function ContactForPlatform() {
                             fullWidth
                             multiline
                             rows={6}
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
                           />
                         </Grid>
                       </Grid>
@@ -93,7 +172,7 @@ function ContactForPlatform() {
                         textAlign="right"
                         ml="auto"
                       >
-                        <MKButton variant="gradient" color="info">
+                        <MKButton variant="gradient" color="info" type="submit">
                           Send Message
                         </MKButton>
                       </Grid>

@@ -11,6 +11,7 @@
     "url": "git+https://github.com/creativetimofficial/ct-material-kit-pro-react.git"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@emotion/cache": "11.13.1",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
@@ -42,6 +43,7 @@
     "react-syntax-highlighter": "15.5.0",
     "rellax": "1.12.1",
     "styled-components": "^6.1.13",
+    "sweetalert2": "^11.14.5",
     "swiper": "9.2.0",
     "typed.js": "2.1.0",
     "uuid": "9.0.0",
