@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -31,8 +31,9 @@ function RotatingCard({ children }) {
   const rotate180 = () => setRotate(true);
 
   return (
-    <MKBox sx={{ perspective: "50rem" }} onMouseEnter={rotate180} onMouseLeave={rotate0}>
+    <MKBox sx={{ perspective: "50rem", height: "100%" }} onMouseEnter={rotate180} onMouseLeave={rotate0}>
       <Card
+      
         sx={{
           backgroundColor: "transparent",
           boxShadow: "none",
@@ -40,6 +41,7 @@ function RotatingCard({ children }) {
           transform: rotate ? "rotateY(180deg)" : "rotateY(0)",
           transformStyle: "preserve-3d",
           transition: "all 0.8s cubic-bezier(0.34, 1.45, 0.7, 1)",
+          height: "100%"
         }}
       >
         {children}

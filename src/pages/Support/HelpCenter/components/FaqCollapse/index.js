@@ -12,6 +12,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+import React from "react";
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
@@ -41,7 +42,7 @@ function FaqCollapse({ title, open, children, ...rest }) {
         borderBottom={`${borderWidth[1]} solid ${borderColor}`}
         sx={{ cursor: "pointer" }}
       >
-        <MKTypography variant="h5" color={open ? "dark" : "text"} sx={{ userSelect: "none" }}>
+        <MKTypography className="content-sub-header" variant="h5" color={open ? "dark" : "text"} sx={{ userSelect: "none" }}>
           {title}
         </MKTypography>
         <MKBox color={open ? "dark" : "text"}>
@@ -52,7 +53,7 @@ function FaqCollapse({ title, open, children, ...rest }) {
       </MKBox>
       <Collapse timeout={400} in={open}>
         <MKBox py={2} lineHeight={1}>
-          <MKTypography variant="button" color="text" opacity={0.8} fontWeight="regular">
+          <MKTypography className="content-body" variant="button" color="text" opacity={0.8} fontWeight="regular">
             {children}
           </MKTypography>
         </MKBox>

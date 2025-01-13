@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef} from "react";
 import FormContext from "./HomePageComponents/FormContext";
 import FooterOne from "./HomePageComponents/FooterThress";
-import CustomNavbarForPlatformPage from "./Navbar/NavbarForPlatformPage";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import routes from "routes";
 import { useNavigate } from "react-router-dom";
+import CustomNavbar from "./Navbar/Navbar";
+
 
 function ContactUs() {
   const navigate = useNavigate();
@@ -20,9 +21,19 @@ function ContactUs() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   const scrollToSection = (id) => {
     console.log(`Navigating to: ${id}`);
     navigate(`/usecases#${id}`); // Navigate to /usecases with the section ID
+  };
+
+  const testimonialsRef = useRef(null);
+  const scrollToTestimonials = () => {
+    if (testimonialsRef.current) {
+      const targetPosition =
+        testimonialsRef.current.getBoundingClientRect().top + window.scrollY + 250;
+      window.scrollTo({ top: targetPosition, behavior: "smooth" });
+    }
   };
 
   return (
@@ -39,10 +50,12 @@ function ContactUs() {
           sticky
         />
       ) : (
-        <CustomNavbarForPlatformPage onNavigate={scrollToSection} />
+        <CustomNavbar onNavigate={scrollToSection} onButtonClick={scrollToTestimonials} />
       )}
-      <div style={{ paddingTop: "70px" }}>
-        <FormContext />
+      <div style={{ paddingTop: "90px" }}>
+        <div>
+          <FormContext />
+        </div>
       </div>
       <FooterOne />
     </>

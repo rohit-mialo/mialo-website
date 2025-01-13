@@ -2,6 +2,7 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
+import React from "react";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
@@ -13,90 +14,110 @@ import MKTypography from "components/MKTypography";
 import { Box } from "@mui/material";
 // import MialoImage from "assets/images/Mialo.A.png";
 import MialoVideo from "assets/videos/Section_two_video.mp4";
+import { Link } from "react-router-dom";
 
 function SectionTwo() {
   return (
     <div style={{ backgroundColor: "black" }}>
-      <MKBox component="header" position="relative">
-        <MKBox
-          display="flex"
-          alignItems="center"
-          minHeight="70vh"
-          sx={{
-            //   backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
-            //     `${linearGradient(
-            //       rgba(gradients.dark.main, 0.5),
-            //       rgba(gradients.dark.state, 0.5)
-            //     )}, url(${bgImage})`,
-            //   backgroundSize: "cover",
-            //   backgroundPosition: "center",
-            backgroundColor: "white",
-          }}
-        >
-          <Container>
-            <Grid container spacing={3}>
-              <Grid
-                item
-                xs={12}
-                md={6}
-                lg={6}
-                display="flex"
-                flexDirection="column"
-                justifyContent="center"
+      <MKBox
+        component="header"
+        position="relative"
+        sx={{
+          padding:"30px",
+          backgroundColor: "white",
+          overflow: "hidden", // Prevents content from going outside
+        }}
+      >
+        <Container>
+          <Grid
+            container
+            spacing={3}
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              minHeight: "75vh",
+            }}
+          >
+            {/* Text Section */}
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+            >
+              <MKTypography
+                className="content-header"
+                variant="h2"
+                color="light"
+                mb={3}
+                sx={({ breakpoints, typography: { size } }) => ({
+                  [breakpoints.down("md")]: {
+                    fontSize: size["3xl"],
+                  },
+                })}
               >
+                Turn Ambiguous, Siloed Multimodal Data into Reusable Resource
+              </MKTypography>
                 <MKTypography
-                  variant="h2"
+                
+                  className="content-body"
+                  variant="body2"
                   color="light"
-                  mb={3}
-                  sx={({ breakpoints, typography: { size } }) => ({
-                    [breakpoints.down("md")]: {
-                      fontSize: size["3xl"],
-                    },
-                  })}
+                  opacity={0.8}
+                  pr={4}
+                  sx={{ textAlign: 'justify'}}
                 >
-                  Turn Ambiguous, Siloed Multimodal Data into Reusable Resource
-                </MKTypography>
-                <MKTypography variant="body2" color="light" opacity={0.8} pr={6} mr={6}>
-                  Unlock AI-powered, multi-modal data for ‘X’ analytics with Mialo.AI, a full stack
-                  AI platform. By leveraging cutting-edge technologies like AIoT, Deep Learning,
-                  Computer Vision, Natural Language Processing, and Speech Recognition, the platform
-                  provides businesses with a comprehensive approach to data, empowering them to
-                  navigate today’s complex landscape-easily and efficiently.
-                </MKTypography>
-                <Stack direction="row" spacing={1} mt={3}>
-                  <MKButton color="info">GET IN TOUCH</MKButton>
-                </Stack>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                md={6}
-                lg={6}
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Box
-                  component="video"
-                  autoPlay
-                  loop
-                  muted
-                  sx={{
-                    width: "100%",
-                    height: "80vh",
-                    // borderRadius: 2, // Optional: for rounded corners
-                  }}
-                >
-                  <source src={MialoVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </Box>
-              </Grid>
+                Unlock AI-powered, multi-modal data for ‘X’ analytics with Mialo.AI, a full stack AI
+                platform. By leveraging cutting-edge technologies like AIoT, Deep Learning, Computer
+                Vision, Natural Language Processing, and Speech Recognition, the platform provides
+                businesses with a comprehensive approach to data, empowering them to navigate today’s
+                complex landscape-easily and efficiently.
+              </MKTypography>
+              <Stack direction="row" spacing={1} mt={3}>
+                <MKButton color="info" component={Link} to="/contactUs">
+                  GET IN TOUCH
+                </MKButton>
+              </Stack>
             </Grid>
-          </Container>
-        </MKBox>
+  
+            {/* Video Section */}
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Box
+                component="video"
+                autoPlay
+                loop
+                muted
+                sx={{
+                  width: "70%", // Makes the video responsive within its container
+                  height: "100%", // Ensures the video does not overflow
+                  maxHeight: "50vh", // Prevents the video from exceeding the box height
+                  objectFit: "fill", // Maintains aspect ratio and fills the box
+                  borderRadius: 2, // Optional: for rounded corners
+                }}
+              >
+                <source src={MialoVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </Box>
+            </Grid>
+
+          </Grid>
+        </Container>
       </MKBox>
     </div>
   );
+  
 }
 
 export default SectionTwo;

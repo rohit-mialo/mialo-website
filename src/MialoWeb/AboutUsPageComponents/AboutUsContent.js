@@ -1,14 +1,15 @@
 // @mui material components
+import React from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 // import Icon from "@mui/material/Icon";
 import Stack from "@mui/material/Stack";
-
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import Box from "@mui/material/Box";
 import MialoImage from "assets/images/mialo/Who_we_are.png";
+import { Link } from "react-router-dom";
 
 // Coworking page component
 // import AboutUsOption from "pages/LandingPages/Coworking/components/AboutUsOption";
@@ -20,7 +21,7 @@ function AboutUsContent() {
         <Container>
           <Grid container alignItems="center">
             <Grid item xs={12} lg={5}>
-              <MKTypography variant="body2" mb={6} style={{ color: "black" }}>
+              <MKTypography className="content-body" variant="body2" mb={6} style={{ color: "black", textAlign: "justify" }}>
                 In today’s fast-evolving world, businesses must constantly adapt and innovate to
                 stay competitive!
                 <br></br>
@@ -39,8 +40,8 @@ function AboutUsContent() {
                 emerging technologies.
               </MKTypography>
               <MKTypography
-                component="a"
-                href="#"
+                component={Link}
+                to="/contactUs"
                 variant="body2"
                 color="light"
                 fontWeight="regular"
@@ -51,7 +52,8 @@ function AboutUsContent() {
                   padding: "10px",
                   alignItems: "center",
                   borderRadius: "15px",
-                  fontWeight: "700",
+                  fontWeight:"700",
+                  fontSize:"12px",
 
                   "& .material-icons-round": {
                     fontSize: "1.125rem",
@@ -64,7 +66,7 @@ function AboutUsContent() {
                   },
                 }}
               >
-                BOOK A DEMO
+                GET IN TOUCH
                 {/* <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon> */}
               </MKTypography>
             </Grid>

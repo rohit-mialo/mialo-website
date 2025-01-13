@@ -1,6 +1,6 @@
 // @mui material components
 import Grid from "@mui/material/Grid";
-
+import React from "react";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 
@@ -101,12 +101,12 @@ function AiBlocks() {
     <>
       <div style={{ paddingTop: "50px" }}>
         <div style={{ maxWidth: "1440px", margin: "auto" }}>
-          <MKTypography variant="h2" align="center" color="black" fontWeight="bold" gutterBottom>
+          <MKTypography className="content-header" variant="h2" align="center" color="black" fontWeight="bold" gutterBottom>
             Build. Scale. Innovate.
             <br />
             Faster with AI
           </MKTypography>
-          <MKTypography variant="body2" color="black" align="center">
+          <MKTypography className="content-body" variant="body2" color="black" align="center">
             No more complicated development processes! Harness the power of our No-Code Platform
             built on easy to deploy AI Blocks.
           </MKTypography>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { FaCog, FaPlug, FaCloud, FaDollarSign, FaShieldAlt, FaRocket } from "react-icons/fa";
 import PropTypes from "prop-types";
@@ -48,8 +48,8 @@ const Card = ({ icon, title, description }) => {
   return (
     <CardContainer>
       <IconWrapper>{icon}</IconWrapper>
-      <Title>{title}</Title>
-      <Description>{description}</Description>
+      <Title className="content-sub-header">{title}</Title>
+      <Description className="content-body">{description}</Description>
     </CardContainer>
   );
 };
@@ -78,6 +78,33 @@ const CardGrid = styled.div`
 
 // Main Component to Display the Cards
 const CardList = () => {
+  const navbarHeight = 90;
+
+  const scrollToSection = (id) => {
+    // Check if 'usecases' is part of the id and extract only the part after it
+    const sectionId = id.includes("Home#") ? id.split("Home#")[1] : id;
+
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionTop - navbarHeight, // Adjust for the navbar height
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    const hash = window.location.hash; // Get the hash from the URL
+    if (hash) {
+      const id = hash.substring(1); // Remove the '#' from the hash
+      setTimeout(() => {
+        scrollToSection(id); // Scroll to the section after a short delay
+      }, 0); // Ensure it runs after the page has rendered
+    }
+  }, []); // Run this effect on component mount
+
+  // const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Adjust the breakpoint as needed
   const cardsData = [
     {
       icon: <FaCog />,
@@ -150,7 +177,10 @@ const CardList = () => {
 
   return (
     <>
-      <div style={{ paddingTop: "50px", paddingBottom: "50px", backgroundColor: "#2d87ec" }}>
+      <div
+        style={{ paddingTop: "50px", paddingBottom: "50px", backgroundColor: "#2d87ec" }}
+        id="why-mialo-ai"
+      >
         <div style={{ maxWidth: "1440px", margin: "auto" }}>
           <div
             style={{
@@ -160,7 +190,7 @@ const CardList = () => {
               flexDirection: "column",
             }}
           >
-            <MKTypography variant="h2" fontWeight="bold" color={"light"}>
+            <MKTypography variant="h2" fontWeight="bold" color={"light"} className="content-header">
               Why Mialo.AI
             </MKTypography>
           </div>

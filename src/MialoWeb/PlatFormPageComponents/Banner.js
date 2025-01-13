@@ -2,7 +2,7 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
-
+import React from "react";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
@@ -10,7 +10,12 @@ import MKTypography from "components/MKTypography";
 import PropTypes from "prop-types";
 
 // Images
-import bgImage from "assets/images/mialo/platformBanner.png";
+// import bgImage from "assets/images/mialo/platformBanner.png";
+// import bgImage from "assets/images/mialo/platformBanner1.png";
+// import bgImage from "assets/images/mialo/platformBanner2.png";
+import bgImage from "assets/images/mialo/platformBanner3.png";
+
+
 // import { Box } from "@mui/material";
 // import MialoImage from "../../assets/images/Mialo.A.png";
 
@@ -44,13 +49,14 @@ function HeaderOne({ onButtonClick }) {
             >
               <MKTypography
                 variant="h1"
-                color="black"
+                color="white"
                 mb={3}
                 sx={({ breakpoints, typography: { size } }) => ({
                   [breakpoints.down("md")]: {
                     fontSize: size["3xl"],
                   },
                 })}
+                className="banner"
               >
                 Unveil the Power of
                 <MKTypography
@@ -66,7 +72,14 @@ function HeaderOne({ onButtonClick }) {
                 </MKTypography>
                 in Automation and Decision Making
               </MKTypography>
-              <MKTypography variant="body1" color="black" opacity={0.8} pr={6} mr={6}>
+              <MKTypography
+                variant="body1"
+                color="white"
+                opacity={0.8}
+                pr={6}
+                mr={6}
+                className="subBanner"
+              >
                 Redefine the way your business analyzes data to optimize processes and automate
                 tasks with Mialo.AI platform.
               </MKTypography>

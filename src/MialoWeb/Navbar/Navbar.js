@@ -8,42 +8,45 @@ import Logo from "assets/images/mialo/Logo_Mialo.png";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-// Custom hook to get window size
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+// // Custom hook to get window size
+// const useWindowSize = () => {
+//   const [windowSize, setWindowSize] = useState({
+//     width: window.innerWidth,
+//     height: window.innerHeight,
+//   });
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
+//   useEffect(() => {
+//     const handleResize = () => {
+//       setWindowSize({
+//         width: window.innerWidth,
+//         height: window.innerHeight,
+//       });
+//     };
 
-    window.addEventListener("resize", handleResize);
+//     window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+//     return () => {
+//       window.removeEventListener("resize", handleResize);
+//     };
+//   }, []);
 
-  return windowSize;
-};
+//   return windowSize;
+// };
 
-const CustomNavbar = ({ onNavigate, onButtonClick }) => {
+const CustomNavbar = ({ onNavigate }) => {
   const [showDropdown, setShowDropdown] = useState(false); // State to manage custom dropdown visibility
   const [showPlatformDropdown, setShowPlatformDropdown] = useState(false);
   const [showIndustriesDropdown, setShowIndustriesDropdown] = useState(false);
   const dropdownRef = useRef(null); // Ref to track the custom dropdown
-  const { width } = useWindowSize();
+  // const { width } = useWindowSize();
   const [navbarBg, setNavbarBg] = useState("transparent");
+  const [navbarColor, SetNavColor] = useState(null)
 
   useEffect(() => {
+    const hash = window.location.hash; 
+    console.log(hash)
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight / 9.8) {
+      if (window.scrollY > window.innerHeight / 9.8||hash=="#/contactUs") {
         setNavbarBg("#000620"); // Set background color after scrolling 100vh
       } else {
         setNavbarBg("transparent"); // Set transparent background for the first 100vh
@@ -74,7 +77,14 @@ const CustomNavbar = ({ onNavigate, onButtonClick }) => {
     };
   }, [dropdownRef]);
 
-  console.log(width);
+  const navColor = (id) => {
+    SetNavColor(id)
+  }
+  const navColorLeave = () => {
+    SetNavColor(null)
+  }
+
+  // console.log(width);
 
   const handleMouseEnter = () => {
     setShowDropdown(true);
@@ -109,7 +119,7 @@ const CustomNavbar = ({ onNavigate, onButtonClick }) => {
           to="/"
           style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
         >
-          <img src={Logo} alt="Mialo.AI Logo" style={{ height: "60px" }} />
+          <img src={Logo} alt="Mialo.AI Logo" style={{ height: "40px" }} />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -122,10 +132,12 @@ const CustomNavbar = ({ onNavigate, onButtonClick }) => {
               onMouseLeave={() => setShowPlatformDropdown(false)}
             >
               <Dropdown.Toggle
+                onMouseEnter={() => navColor(1)}
+                onMouseLeave={navColorLeave}
                 variant="link"
                 id="platform-dropdown"
                 style={{
-                  color: "white",
+                  color: navbarColor === 1 ? "#5ce1e6" : "white",
                   textDecoration: "none",
                   fontSize: "18px",
                   lineHeight: "1.5",
@@ -150,6 +162,7 @@ const CustomNavbar = ({ onNavigate, onButtonClick }) => {
             {/* Solutions Dropdown */}
             {/* Trigger to show the custom dropdown */}
             <Nav.Link
+              className="navbar-header"
               as={Link}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -162,8 +175,17 @@ const CustomNavbar = ({ onNavigate, onButtonClick }) => {
               to="/solutions"
             >
               Solutions
+              <ArrowDropDownIcon
+                fontSize="medium"
+                style={{
+                  color: showDropdown ? "#5ce1e6" : "white",
+                  marginLeft: "-3px",
+                  marginTop: "-6px"
+                }}
+              />
+
             </Nav.Link>
-            <ArrowDropDownIcon color="white" fontSize="medium" style={{ marginLeft: "-10px" }} />
+
 
             {/* Render the CustomDropdown if showDropdown is true */}
             {showDropdown && (
@@ -183,60 +205,106 @@ const CustomNavbar = ({ onNavigate, onButtonClick }) => {
               onMouseLeave={() => setShowIndustriesDropdown(false)}
             >
               <Dropdown.Toggle
+                onMouseEnter={() => navColor(2)}
+                onMouseLeave={navColorLeave}
+                className="navbar-header"
                 variant="link"
                 id="platform-dropdown"
+                as={Link}
+                to="/IndustriesUseCase"
                 style={{
-                  color: "white",
+                  color: navbarColor === 2 ? "#5ce1e6" : "white",
                   textDecoration: "none",
                   fontSize: "18px",
-                  lineHeight: "1.5",
+                  lineHeight: "3.5",
+                  padding: "8px",
                 }}
               >
                 Industries
               </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+              <Dropdown.Menu className="navbar-dropdown">
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=Retail"
+                  style={{ color: "black" }}
+                >
                   Retail
                 </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=BFSI"
+                  style={{ color: "black" }}
+                >
                   BFSI
                 </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=Infrastructure"
+                  style={{ color: "black" }}
+                >
                   Infrastructure
                 </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=Logistics"
+                  style={{ color: "black" }}
+                >
                   Logistics
                 </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=Security"
+                  style={{ color: "black" }}
+                >
                   Security
                 </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=Healthcare"
+                  style={{ color: "black" }}
+                >
                   Healthcare
                 </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=Hospitality"
+                  style={{ color: "black" }}
+                >
                   Hospitality
                 </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=Agriculture"
+                  style={{ color: "black" }}
+                >
                   Agriculture
                 </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/" style={{ color: "black" }}>
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=Manufacturing"
+                  style={{ color: "black" }}
+                >
                   Manufacturing
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <Nav.Link
+              onMouseEnter={() => navColor(3)}
+              onMouseLeave={navColorLeave}
               as={Link}
               to="/aboutus"
-              style={{ color: "white", textDecoration: "none", fontSize: "18px" }}
+              style={{ color: navbarColor === 3 ? "#5ce1e6" : "white", textDecoration: "none", fontSize: "18px" }}
             >
-              About Us
+              About us
             </Nav.Link>
             <Nav.Link
+              onMouseEnter={() => navColor(4)}
+              onMouseLeave={navColorLeave}
               as={Link}
               to="/contactUs"
-              style={{ color: "white", textDecoration: "none", fontSize: "18px" }}
+              style={{ color: navbarColor === 4 ? "#5ce1e6" : "white", textDecoration: "none", fontSize: "18px" }}
             >
-              Contact Us
+              Contact us
             </Nav.Link>
 
             {/* Simple Dropdown for Products */}
@@ -260,7 +328,7 @@ const CustomNavbar = ({ onNavigate, onButtonClick }) => {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown> */}
-            <button
+            {/* <button
               style={{
                 position: "relative",
                 fontSize: "14px",
@@ -307,7 +375,7 @@ const CustomNavbar = ({ onNavigate, onButtonClick }) => {
               >
                 TALK TO US
               </span>
-            </button>
+            </button> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -317,7 +385,6 @@ const CustomNavbar = ({ onNavigate, onButtonClick }) => {
 
 CustomNavbar.propTypes = {
   onNavigate: PropTypes.func.isRequired,
-  onButtonClick: PropTypes.func.isRequired,
 };
 
 export default CustomNavbar;

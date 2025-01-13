@@ -66,10 +66,10 @@ function Contact() {
                   height="100%"
                 >
                   <MKBox py={6} pr={6} pl={{ xs: 6, sm: 12 }} my="auto">
-                    <MKTypography variant="h3" color="white" mb={1}>
+                    <MKTypography className="content-header" variant="h3" color="white" mb={1}>
                       Contact Information
                     </MKTypography>
-                    <MKTypography variant="body2" color="white" opacity={0.8} mb={3}>
+                    <MKTypography className="content-body" variant="body2" color="white" opacity={0.8} mb={3}>
                       Fill up the form and our Team will get back to you within 24 hours.
                     </MKTypography>
                     <MKBox display="flex" p={1}>

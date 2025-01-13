@@ -37,6 +37,7 @@
     "react-dom": "18.3.1",
     "react-flatpickr": "3.10.13",
     "react-icons": "^5.3.0",
+    "react-lazy-load-image-component": "^1.6.2",
     "react-responsive": "^10.0.0",
     "react-router-dom": "6.26.1",
     "react-scripts": "5.0.1",
@@ -45,7 +46,7 @@
     "styled-components": "^6.1.13",
     "sweetalert2": "^11.14.5",
     "swiper": "9.2.0",
-    "typed.js": "2.1.0",
+    "typed.js": "^2.1.0",
     "uuid": "9.0.0",
     "web-vitals": "4.2.3"
   },

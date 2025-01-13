@@ -36,12 +36,12 @@ const CustomDropdown = ({ onNavigate }) => {
         { label: "Human Identification", id: "human_identification" },
         { label: "People Counting", id: "people_counting" },
         { label: "Crowd Monitoring", id: "crowd_monitoring" },
-        { label: "Theft & Fraud Detection", id: "theft_fraud_detection" },
+        { label: "Theft & Fraud Detection", id: "fraud_detection" },
         { label: "Visitor Management", id: "visitor_management" },
         { label: "Time & Attendance Tracking", id: "time_attendance_tracking" },
         { label: "Threat Detection & Response", id: "threat_detection_response" },
         { label: "Intrusion Detection", id: "intrusion_detection" },
-        { label: "Access Control", id: "access_control" },
+        { label: "Access Control", id: "vehicle_access_control" },
         { label: "Anomaly Detection", id: "anomaly_detection" },
         { label: "Speed Monitoring", id: "speed_monitoring" },
         { label: "Dwell Time Monitoring", id: "dwell_time_monitoring" },
@@ -97,7 +97,7 @@ const CustomDropdown = ({ onNavigate }) => {
 
       <div className="dropdown-content">
         {activeSection !== null && (
-          <div className="dropdown-box">
+          <div className="dropdown-box navbar-dropdown">
             {menuItems[activeSection].options.map((option, index) => (
               <div key={index} className="dropdown-option" onClick={() => onNavigate(option.id)}>
                 {option.label}

@@ -11,9 +11,12 @@ function UseCases() {
   const navbarHeight = 90; // Adjust this value to match your navbar height
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
+    // Check if 'usecases' is part of the id and extract only the part after it
+    const sectionId = id.includes("usecases#") ? id.split("usecases#")[1] : id;
+
+    const section = document.getElementById(sectionId);
     if (section) {
-      const sectionTop = section.getBoundingClientRect().top + window.scrollY; // Get the position of the section
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: sectionTop - navbarHeight, // Adjust for the navbar height
         behavior: "smooth",
@@ -23,6 +26,7 @@ function UseCases() {
 
   useEffect(() => {
     const hash = window.location.hash; // Get the hash from the URL
+ 
     if (hash) {
       const id = hash.substring(1); // Remove the '#' from the hash
       setTimeout(() => {
@@ -32,9 +36,16 @@ function UseCases() {
   }, []); // Run this effect on component mount
 
   const handleNavigate = (id) => {
-    scrollToSection(id);
-    window.history.pushState(null, "", `#${id}`); // Update the URL hash without reloading
+    // Check if the 'id' already includes 'usecases'. If not, add it as a prefix.
+    const prefixedId = id.includes("usecases") ? id : `/usecases#${id}`;
+
+    // Scroll to the section using the modified ID
+    scrollToSection(prefixedId);
+
+    // Update the URL hash without reloading the page
+    window.history.pushState(null, "", `#${prefixedId}`);
   };
+
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Adjust the breakpoint as needed
 
   useEffect(() => {

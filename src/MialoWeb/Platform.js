@@ -9,17 +9,20 @@ import routes from "routes";
 import Faq from "./PlatFormPageComponents/Faq";
 import Industries from "./PlatFormPageComponents/Industries";
 import FooterThress from "./HomePageComponents/FooterThress";
-import Gallery from "./PlatFormPageComponents/Gallery";
+// import Gallery from "./PlatFormPageComponents/Gallery";
 import ContactForPlatform from "./PlatFormPageComponents/ContactForPlatform";
 import NumberSection from "./HomePageComponents/NumberSection";
 import CardList from "./HomePageComponents/CardList";
 import CardGrid from "./HomePageComponents/CardGrid";
 import Testimonials from "./HomePageComponents/Testimonials";
 import AiBlocks from "./PlatFormPageComponents/AiBlocks";
-import CustomNavbarForPlatformPage from "./Navbar/NavbarForPlatformPage";
+// import CustomNavbarForPlatformPage from "./Navbar/NavbarForPlatformPage";
+import CustomNavbar from "./Navbar/Navbar";
 
 function Platform() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Adjust the breakpoint as needed
+  const [clickCount, setClickCount] = useState(0); // Track the number of clicks
+  const testimonialsRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,12 +40,13 @@ function Platform() {
     navigate(`/usecases#${id}`); // Navigate to /usecases with the section ID
   };
 
-  const testimonialsRef = useRef(null);
   const scrollToTestimonials = () => {
     if (testimonialsRef.current) {
       const targetPosition =
-        testimonialsRef.current.getBoundingClientRect().top + window.scrollY + 250; // Adjust 100px based on header height
+        testimonialsRef.current.getBoundingClientRect().top + window.scrollY + (clickCount === 0 ? 250 : 100);
+      
       window.scrollTo({ top: targetPosition, behavior: "smooth" });
+      setClickCount(prevCount => prevCount + 1); // Increment the click count after each click
     }
   };
   return (
@@ -60,10 +64,11 @@ function Platform() {
           sticky
         />
       ) : (
-        <CustomNavbarForPlatformPage
-          onNavigate={scrollToSection}
-          onButtonClick={scrollToTestimonials}
-        />
+        // <CustomNavbarForPlatformPage
+        //   onNavigate={scrollToSection}
+        //   onButtonClick={scrollToTestimonials}
+        // />
+        <CustomNavbar onNavigate={scrollToSection} onButtonClick={scrollToTestimonials} />
       )}
       <HeaderOne onButtonClick={scrollToTestimonials} />
       <Slider />
@@ -77,7 +82,7 @@ function Platform() {
       <div style={{ backgroundColor: "white" }}>
         <Industries />
       </div>
-      <Gallery />
+      {/* <Gallery /> */}
       <div style={{ backgroundColor: "white" }}>
         <Testimonials />
       </div>
@@ -88,5 +93,5 @@ function Platform() {
     </div>
   );
 }
-
+  
 export default Platform;

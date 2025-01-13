@@ -1,31 +1,27 @@
-// @mui material components
 import Grid from "@mui/material/Grid";
 import { useState } from "react";
 import { Fade } from "@mui/material";
-
-// Material Kit 2 PRO React components
+import React from "react";
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 
-// Material Kit 2 PRO React examples
 import RaisedBlogCard from "examples/Cards/BlogCards/RaisedBlogCard";
-//images
-import img1 from "assets/images/mialo/Shopper_Anaytics.png";
-import img2 from "assets/images/mialo/Generative_AI.png";
-import img3 from "assets/images/mialo/Smart_Parking.png";
-import img4 from "assets/images/mialo/Smart_Security.png";
-import img5 from "assets/images/mialo/Access_Control.png";
-import img6 from "assets/images/mialo/Document_Processing.png";
+
+import img1 from "assets/images/mialo/Shopper_Anaytics2.png";
+import img2 from "assets/images/mialo/Generative_AI2.png";
+import img3 from "assets/images/Smart_Parking.png";
+import img4 from "assets/images/mialo/Smart_Security2.png";
+import img5 from "assets/images/mialo/Access_Control2.png";
+import img6 from "assets/images/mialo/Document_Processing2.png";
 import { Link } from "react-router-dom";
 
-// Sample card data
 const cardData = [
   {
     image: img1,
     title: "Shopper Analytics",
     description:
       "Unlock actionable insights into customer behavior, demographics, and buying journeys to optimize retail strategies.",
-    route: "/sections/page-sections/general-cards",
+    route: "/solutions#shopper-analytics",
   },
   {
     image: img3,
@@ -36,52 +32,53 @@ const cardData = [
         hassles and enhancing overall convenience.
       </>
     ),
-
-    route: "/sections/page-sections/general-cards",
+    route: "/solutions#smart-parking",
   },
   {
     image: img2,
     title: "Generative & Conversational AI",
     description:
       "Enhance interactions by comprehending and processing language nuances, boosting efficiency in real-time communication.",
-    route: "/sections/page-sections/general-cards",
+    route: "/solutions#generative-ai",
   },
   {
     image: img4,
     title: "Smart Security",
     description:
       "Ensure complete security across your premises by monitoring objects and people in real-time and making intelligent, informed decisions using Artificial Intelligence.",
-    route: "/sections/page-sections/general-cards",
+    route: "/solutions#smart-security",
   },
   {
     image: img5,
     title: "Access Control",
     description:
       "Simplify access management for humans and vehicles leveraging Facial Recognition & Number Plate Reading technology, respectively to prevent unauthorized access.",
-    route: "/sections/page-sections/general-cards",
+    route: "/solutions#access-control",
   },
   {
     image: img6,
     title: "AI-Powered Document Processing",
     description:
       "Extract, analyze, and process structured and unstructured data from various types of documents through automation.",
-    route: "/sections/page-sections/general-cards",
+    route: "/solutions#document-processing",
   },
-  // Add more cards as needed
 ];
 
 function CardGrid() {
-  const [visibleCards, setVisibleCards] = useState(3); // Start with 3 cards
+  const [visibleCards, setVisibleCards] = useState(3);
 
   const loadMoreCards = () => {
-    setVisibleCards((prev) => prev + 3); // Load 3 more cards
+    setVisibleCards((prev) => prev + 3);
   };
 
   return (
     <div style={{ backgroundColor: "black", paddingTop: "50px", paddingBottom: "50px" }}>
       <div style={{ maxWidth: "1440px", margin: "auto" }}>
         <MKBox pt={6} pb={3} px={3}>
-          <h2 style={{ textAlign: "center", color: "white", marginBottom: "100px" }}>
+          <h2
+            style={{ textAlign: "center", color: "white", marginBottom: "100px" }}
+            className="content-header"
+          >
             Drive Value from Every Insight with
             <br />
             Mialo.AI&apos;s Dynamic Solutions
@@ -98,13 +95,13 @@ function CardGrid() {
                         description={card.description}
                         action={{
                           type: "internal",
-                          route: "/solutions", // Set the route to /solutions
+                          route: card.route,
                           color: "info",
                           label: "Learn more",
-                          component: Link, // Use Link component for navigation
+                          component: Link,
                         }}
                         sx={{
-                          height: "100%", // Ensure the card takes full height of the container
+                          height: "100%",
                           display: "flex",
                           flexDirection: "column",
                         }}

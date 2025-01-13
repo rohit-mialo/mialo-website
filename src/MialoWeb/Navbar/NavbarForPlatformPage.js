@@ -33,7 +33,7 @@ const useWindowSize = () => {
   return windowSize;
 };
 
-const CustomNavbarForPlatformPage = ({ onNavigate, onButtonClick }) => {
+const CustomNavbarForPlatformPage = ({ onNavigate }) => {
   const [showDropdown, setShowDropdown] = useState(false); // State to manage custom dropdown visibility
   const [showPlatformDropdown, setShowPlatformDropdown] = useState(false);
   const [showIndustriesDropdown, setShowIndustriesDropdown] = useState(false);
@@ -92,7 +92,7 @@ const CustomNavbarForPlatformPage = ({ onNavigate, onButtonClick }) => {
           to="/"
           style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
         >
-          <img src={Logo} alt="Mialo.AI Logo" style={{ height: "45.25px" }} />
+          <img src={Logo} alt="Mialo.AI Logo" style={{ height: "40px" }} />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -178,10 +178,18 @@ const CustomNavbarForPlatformPage = ({ onNavigate, onButtonClick }) => {
                 Industries
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=Retail"
+                  style={{ color: "black" }}
+                >
                   Retail
                 </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
+                <Dropdown.Item
+                  as={Link}
+                  to="/IndustriesUseCase?industry=BFSI"
+                  style={{ color: "black" }}
+                >
                   BFSI
                 </Dropdown.Item>
                 <Dropdown.Item as={Link} to="/platform" style={{ color: "black" }}>
@@ -212,7 +220,7 @@ const CustomNavbarForPlatformPage = ({ onNavigate, onButtonClick }) => {
               to="/aboutus"
               style={{ color: "white", textDecoration: "none", fontSize: "18px" }}
             >
-              About Us
+              About us
             </Nav.Link>
             <Nav.Link
               as={Link}
@@ -243,7 +251,7 @@ const CustomNavbarForPlatformPage = ({ onNavigate, onButtonClick }) => {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown> */}
-            <button
+            {/* <button
               style={{
                 position: "relative",
                 fontSize: "14px",
@@ -290,7 +298,7 @@ const CustomNavbarForPlatformPage = ({ onNavigate, onButtonClick }) => {
               >
                 TALK TO US
               </span>
-            </button>
+            </button> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -300,7 +308,6 @@ const CustomNavbarForPlatformPage = ({ onNavigate, onButtonClick }) => {
 
 CustomNavbarForPlatformPage.propTypes = {
   onNavigate: PropTypes.func.isRequired,
-  onButtonClick: PropTypes.func.isRequired,
 };
 
 export default CustomNavbarForPlatformPage;

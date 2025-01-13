@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --banner-header-fontSize:42px;
+    --banner-header-fontWeight:bold;
+    --banner-sub-header-fontSize:1.25rem;
+    --subHeader-fontSize:28px;
+    --banner-header-content-FontSize:1.25rem;
+    --bs-body-font-family: "Archivo", sans-serif;
+    --navbar-menuItems-FontSize:18px;
+    --navbar-dropdown-FontSize:14px;
+    --fonter-FontSize:16px;
+    --button-fontSize:0.75rem;
+    --content-header-FontSize:36px;
+    --content-sub-header-FontSize:26px;
+    --content-body-FontSize:20px;
+    --dropdown-fontSize:14px;
+}
+body,html,*{
+    /* font-family: var(--bs-body-font-family) !important; */
+}
+
+/* button.MuiButton-root,a.MuiTypography-root,p.MuiTypography-root{
+    font-size: var(--content-FontSize) !important;
+}
+
+h1.MuiTypography-root{
+    font-size: var(--header-fontSize)!important;
+    font-weight: var(--header-fontWeight)!important;
+} */
+
+/* banner css */
+
+.banner{
+    font-size: var(--banner-header-fontSize) !important;
+    font-weight: var(--banner-header-fontWeight) !important;
+
+}
+
+.subBanner{
+    font-size: var(--banner-sub-header-fontSize)!important;
+}
+
+button.MuiButton-root{
+    font-size: var( --button-fontSize) !important;
+}
+
+
+
+/* content header */
+
+.content-header{
+    font-size: var(--content-header-FontSize) !important;
+    font-weight: var(--banner-header-fontWeight) !important;
+    word-spacing: 5px !important;
+
+}
+.content-sub-header{
+    font-size: var(--content-sub-header-FontSize) !important;
+}
+.content-body{
+    font-size: var(--content-body-FontSize) !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+    white-space: normal; 
+    line-height: 1.5;
+}
+.navbar-dropdown{
+    font-size: var(--navbar-dropdown-FontSize) !important;
+    font-family: var(--bs-body-font-family) !important;
+}
+.navbar-header{
+    font-family: var(--bs-body-font-family) !important;
+}
+.solution-header{
+    font-weight: bold !important;
+}

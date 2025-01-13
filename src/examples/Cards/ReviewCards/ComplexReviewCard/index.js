@@ -15,7 +15,7 @@ Coded by www.creative-tim.com
 
 // prop-types is library for typechecking of props
 import PropTypes from "prop-types";
-
+import React from "react";
 // @mui material components
 import Grid from "@mui/material/Grid";
 
@@ -24,7 +24,7 @@ import MKBox from "components/MKBox";
 // import MKAvatar from "components/MKAvatar";
 import MKTypography from "components/MKTypography";
 
-function ComplexReviewCard({ image, color = "dark", title, review, author }) {
+function ComplexReviewCard({ image, color = "dark", title, review, review2, author }) {
   return (
     <Grid container alignItems="center" spacing={3}>
       <Grid item xs={12} md={5} sx={{ ml: { xs: 0, lg: "auto" } }}>
@@ -34,6 +34,7 @@ function ComplexReviewCard({ image, color = "dark", title, review, author }) {
             src={image}
             alt={title}
             width="100%"
+            height="80vh"
             borderRadius="md"
             shadow="md"
           />
@@ -46,9 +47,16 @@ function ComplexReviewCard({ image, color = "dark", title, review, author }) {
         <MKTypography variant="h3" color={color}>
           {title}
         </MKTypography>
-        <MKTypography variant="body2" color="text" my={3}>
+        <MKTypography variant="body2" sx={{textAlign:"justify"}} color="text" my={3} className="content-body">
           <em>&quot;{review}&quot;</em>
         </MKTypography>
+
+        {review2 && (
+          <MKTypography variant="body2" sx={{ textAlign: "justify" }} color="text" my={3} className="content-body">
+            <em>&quot;{review2}&quot;</em>
+          </MKTypography>
+        )}
+
         <MKBox display="flex" alignItems="center">
           {/* <MKAvatar
             src={author.logo}
@@ -58,11 +66,11 @@ function ComplexReviewCard({ image, color = "dark", title, review, author }) {
             bgColor={color}
             sx={{ p: 0.5 }}
           /> */}
-          <MKBox pl={1.5}>
-            <MKTypography display="block" variant="button" color={color} fontWeight="bold">
+          <MKBox pl={1.5} >
+            <MKTypography display="block" variant="button" color={color} fontWeight="bold" className="content-sub-header">
               {author.name}
             </MKTypography>
-            <MKTypography display="block" variant="button" color="text" fontWeight="regular">
+            <MKTypography display="block" variant="button" color="text" fontWeight="regular" className="content-body">
               {author.role}
             </MKTypography>
           </MKBox>
@@ -107,6 +115,7 @@ ComplexReviewCard.propTypes = {
   ]),
   title: PropTypes.string.isRequired,
   review: PropTypes.string.isRequired,
+  review2: PropTypes.string.isRequired,
   author: PropTypes.shape({
     logo: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

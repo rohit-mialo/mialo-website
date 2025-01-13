@@ -2,7 +2,7 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
-
+import React from "react";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
@@ -51,6 +51,7 @@ function SolutionPageBanner({ onButtonClick }) {
                     fontSize: size["3xl"],
                   },
                 })}
+                className="banner"
               >
                 Harness the Power of Next-Gen AI for Decision Intelligence
                 {/* <MKTypography
@@ -66,7 +67,14 @@ function SolutionPageBanner({ onButtonClick }) {
                 </MKTypography>
                 in Decision Making */}
               </MKTypography>
-              <MKTypography variant="body1" color="white" opacity={0.8} pr={6} mr={6}>
+              <MKTypography
+                variant="body1"
+                color="white"
+                opacity={0.8}
+                pr={6}
+                mr={6}
+                className="subBanner"
+              >
                 Embrace real-time data and automated models for quicker, smarter, and intelligent
                 business decisions.
               </MKTypography>

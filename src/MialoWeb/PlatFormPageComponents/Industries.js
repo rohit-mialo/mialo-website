@@ -1,8 +1,9 @@
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+// import { Link } from "react-router-dom";
 // import Icon from "@mui/material/Icon";
-
+import React,{useEffect} from "react";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -21,61 +22,70 @@ import img8 from "assets/images/mialo/Healthcare.png";
 import img9 from "assets/images/mialo/Retail.png";
 import MKButton from "components/MKButton";
 
-// Sample data for dynamic content
+/// Updated industryData with links
 const industryData = [
   {
     image: img9,
     icon: "import_contacts",
     title: "Retail",
     label: "257 spots",
+    link: "#/IndustriesUseCase?industry=Retail", // Link to the Retail page
   },
   {
     image: img1,
     icon: "festival",
     title: "BFSI",
     label: "117 spots",
+    link: "#/IndustriesUseCase?industry=BFSI", // Link to the BFSI page
   },
   {
     image: img6,
     icon: "festival",
     title: "Infrastructure",
     label: "117 spots",
+    link: "#/IndustriesUseCase?industry=Infrastructure",
   },
   {
     image: img5,
     icon: "volunteer_activism",
     title: "Logistics",
     label: "363 spots",
+    link: "#/IndustriesUseCase?industry=Logistics",
   },
   {
     image: img3,
     icon: "theater_comedy",
     title: "Security",
     label: "215 spots",
+    link: "#/IndustriesUseCase?industry=Security",
   },
   {
     image: img8,
     icon: "star",
     title: "Healthcare",
     label: "120 spots",
+    link: "#/IndustriesUseCase?industry=Healthcare",
   },
   {
     image: img4,
     icon: "sports_soccer",
     title: "Hospitality",
     label: "85 spots",
+    link: "#/IndustriesUseCase?industry=Hospitality",
   },
   {
     image: img2,
     icon: "sports_soccer",
     title: "Agriculture",
     label: "85 spots",
+    link: "#/IndustriesUseCase?industry=Agriculture",
   },
   {
     image: img7,
     icon: "sports_soccer",
     title: "Manufacturing",
     label: "85 spots",
+    link: "#/IndustriesUseCase?industry=Manufacturing",
   },
   // Add more items as needed
 ];
@@ -87,8 +97,35 @@ function Industries() {
     setVisibleCount((prev) => prev + 3); // Load 3 more cards
   };
 
+
+  // const navbarHeight = 90; // Adjust this value to match your navbar height
+
+  // const scrollToSection = (id) => {
+  //   // Check if 'usecases' is part of the id and extract only the part after it
+  //   const sectionId = id.includes("usecases#") ? id.split("usecases#")[1] : id;
+
+  //   const section = document.getElementById(sectionId);
+  //   if (section) {
+  //     const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+  //     window.scrollTo({
+  //       top: sectionTop - navbarHeight, // Adjust for the navbar height
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const section = document.getElementById(hash.substring(1));
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, []);
+
   return (
-    <div style={{ paddingTop: "50px", paddingBottom: "50px" }}>
+    <div id="Contact-Form" style={{ paddingTop: "50px", paddingBottom: "50px" }}>
       <div style={{ maxWidth: "1440px", margin: "auto" }}>
         <MKBox component="section" py={2}>
           <Container>
@@ -103,21 +140,6 @@ function Industries() {
               mb={6}
             >
               <MKBox py={2} px={3} textAlign="center">
-                {/* <MKBox
-                width="4rem"
-                height="4rem"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                variant="gradient"
-                bgColor="info"
-                color="white"
-                shadow="md"
-                borderRadius="lg"
-                mx="auto"
-              >
-                <Icon fontSize="medium">person</Icon>
-              </MKBox> */}
                 <MKTypography variant="h2" mt={2} mb={1} color="black">
                   Enabling Decision Intelligence
                   <br /> Across Industries
@@ -129,7 +151,9 @@ function Industries() {
                 <Grid item xs={12} sm={6} md={4} key={index}>
                   {" "}
                   {/* 3 items per row */}
-                  <InfoBackgroundCard image={industry.image} title={industry.title} />
+                  <a href={industry.link} style={{ textDecoration: "none" }}>
+                    <InfoBackgroundCard image={industry.image} title={industry.title} />
+                  </a>
                 </Grid>
               ))}
             </Grid>

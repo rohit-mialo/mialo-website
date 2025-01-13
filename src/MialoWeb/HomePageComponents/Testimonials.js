@@ -1,5 +1,5 @@
 import { useRef } from "react";
-
+import React from "react";
 // SwiperJS
 import SwiperCore, { Autoplay, Navigation } from "swiper";
 
@@ -22,24 +22,25 @@ import MKTypography from "components/MKTypography";
 import ComplexReviewCard from "examples/Cards/ReviewCards/ComplexReviewCard";
 
 // Images
-// import review1 from "assets/images/examples/clem-onojegaw.jpg";
+import review1 from "assets/images/mialo/copy-cat-group.png";
 import review2 from "assets/images/mialo/abcData.png";
 import review3 from "assets/images/mialo/digiMaker.png";
+import review4 from "assets/images/mialo/nasscom_11zon.png"
 // import logoSpotify from "assets/images/logos/small-logos/logo-spotify.svg";
 import logoSlack from "assets/images/logos/small-logos/logo-slack.svg";
 
 const testimonialsData = [
-  // {
-  //   image: review1,
-  //   title: "Excellent payment service. You guys are the best!",
-  //   review:
-  //     "The beauty of working with Mialo is it feels like you are working with your co-founders. They will make you think harder, they are ready for any technology challenges and have a keen eye on not only giving fine solutions to you but a futuristic one. Great spirit, great team.",
-  //   author: {
-  //     logo: logoSpotify,
-  //     name: "Abdul G Sait",
-  //     role: "Group CEO, Basket Option Pvt. Ltd.",
-  //   },
-  // },
+  {
+    image: review1,
+    title: "Awesome services! Fast and secure.",
+    review:
+      "I highly recommend Mialo Tech based on our collaborative experience. Their technical expertise, commitment to timelines, adaptability, and strong work ethic have consistently enabled us to deliver projects that exceed our customers’ expectations.",
+    author: {
+      logo: logoSlack,
+      name: "Nadeem Nazir Noordin",
+      role: "Director - IT Business, Copy Cat Group",
+    },
+  },
   {
     image: review2,
     title: "Awesome services! Fast and secure.",
@@ -62,6 +63,20 @@ const testimonialsData = [
       role: "Web- and Interaction Designer / Advisor, Digimaker Webbyrå",
     },
   },
+  {
+    image: review4,
+    title: "Awesome services! Fast and secure.",
+    review:
+      "Mialo.AI's advanced capabilities have truly been a game changer for us. Their innovative solutions have effectively solved several multimodal AI problems, including fire and smoke detection, which not only protect our assets but, more importantly, safeguard human lives. The system's impressive accuracy and swift response times give us confidence, enabling us to address potential issues before they escalate.",
+    review2: 
+      "During the integration process, the Mialo team has been exceptionally supportive, providing outstanding customer service at every stage. Their proactive approach to understanding and addressing our unique security needs has significantly enhanced our operations. We wholeheartedly recommend Mialo.AI to anyone seeking to overcome their multimodal AI challenges.",
+    author: {
+      logo: logoSlack,
+      name: "Sanjeev Malhotra",
+      role: "CEO - Centre of Excellence for IOT and AI, Nasscom",
+    },
+  },
+
 ];
 
 function Testimonials() {
@@ -103,7 +118,7 @@ function Testimonials() {
             marginBottom: "16px",
           }}
         >
-          <MKTypography variant="h2" color="black" align="center">
+          <MKTypography variant="h2" color="black" align="center" className="content-header">
             What Our Clients Say About Us
           </MKTypography>
         </div>
@@ -130,6 +145,7 @@ function Testimonials() {
                     image={testimonial.image}
                     // title={testimonial.title}
                     review={testimonial.review}
+                    review2={testimonial.review2}
                     author={testimonial.author}
                   />
                 </Container>
@@ -152,6 +168,7 @@ function Testimonials() {
               sx={{
                 ...navigationStyles,
                 right: 0,
+
               }}
               ref={navigationNextRef}
             >

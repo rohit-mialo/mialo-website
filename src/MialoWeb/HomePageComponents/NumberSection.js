@@ -42,9 +42,8 @@ function NumberSection() {
           width: "100%", // Ensure full width for centering
         }}
       >
-        <h2 style={{ fontSize: "2.25rem" }}>
-          Numbers that Speak
-          <br /> Volumes
+        <h2 style={{ fontSize: "2.25rem" }} className="content-header">
+          Numbers that Speak Volumes
         </h2>
       </div>
       <MKBox ref={sectionRef} component="section">

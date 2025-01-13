@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -164,13 +164,13 @@ function HeaderTwo({ onButtonClick }) {
             // zIndex: -1,
           }}
         >
-          <source src={bgVideo} type="video/mp4" />
+          <source src={bgVideo} type="video/mp4" className="img-fluid"/>
           Your browser does not support the video tag.
         </video>
         <Container>
           <Grid
             container
-            item
+            itemzl
             xs={12}
             lg={8}
             flexDirection="column"
@@ -188,6 +188,7 @@ function HeaderTwo({ onButtonClick }) {
                 },
               })}
               style={{ zIndex: 1 }}
+              className="banner"
             >
               Unlock New Level of
               <br /> <span ref={typedJSRef} /> <br /> with Multimodal AI
@@ -199,6 +200,7 @@ function HeaderTwo({ onButtonClick }) {
               mb={6}
               px={{ xs: 3, lg: 6 }}
               style={{ zIndex: 1 }}
+              className="subBanner"
             >
               Leverage multimodal AI for ‘X’ Analytics, integrating intelligence and automation
               across business workflows.
@@ -207,7 +209,7 @@ function HeaderTwo({ onButtonClick }) {
               {/* <MKButton color="white" style={{ marginRight: 10 }}>
                 Book a Demo
               </MKButton> */}
-              <MKButton color="white" onClick={onButtonClick}>
+              <MKButton color="white" onClick={()=>onButtonClick()}>
                 Talk to Us
               </MKButton>
             </div>

@@ -12,7 +12,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
+import React from "react";
 import AboutUs from "MialoWeb/AboutUs";
 import ContactUs from "MialoWeb/ContactUs";
 import Platform from "MialoWeb/Platform";
@@ -331,46 +331,46 @@ const routes = [
       // collapse: [
       {
         name: "Retail",
-        // route: "/",
+        route: "/IndustriesUseCase?industry=Retail",
       },
       {
         name: "BFSI",
-        // route: "/",
+        route: "/IndustriesUseCase?industry=BFSI",
       },
       {
         name: "Infrastructure",
-        // route: "/",
+        route: "/IndustriesUseCase?industry=Infrastructure",
       },
       {
         name: "Logistics",
-        // route: "/",
+        route: "/IndustriesUseCase?industry=Logistics",
       },
       {
         name: "Security",
-        // route: "/",
+        route: "/IndustriesUseCase?industry=Security",
       },
       {
         name: "Healthcare",
-        // route: "/",
+        route: "/IndustriesUseCase?industry=Healthcare",
       },
       {
         name: "Hospitality",
-        // route: "/",
+        route: "/IndustriesUseCase?industry=Hospitality",
       },
       {
         name: "Agriculture",
-        // route: "/",
+        route: "/IndustriesUseCase?industry=Agriculture",
       },
       {
         name: "Manufacturing",
-        // route: "/",
+        route: "/IndustriesUseCase?industry=Manufacturing",
       },
       // ],
       // },
     ],
   },
   {
-    name: "About Us",
+    name: "About us",
     route: "/aboutus",
     component: <AboutUs />,
   },

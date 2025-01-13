@@ -15,7 +15,7 @@ Coded by www.creative-tim.com
 
 // prop-types is library for typechecking of props
 import PropTypes from "prop-types";
-
+import React from "react";
 // @mui material components
 import Icon from "@mui/material/Icon";
 
@@ -100,67 +100,79 @@ function DefaultReviewCard({ color = "transparent", image = "", name, date, revi
 
   return (
     <MKBox
-      variant={color === "transparent" ? "contained" : "gradient"}
-      bgColor={color}
-      borderRadius="xl"
-      shadow={color === "transparent" ? "none" : "md"}
-      p={3}
-    >
-      {image && (
-        <MKAvatar
-          src={image}
-          alt={name}
-          variant="rounded"
-          size="lg"
-          shadow="md"
-          sx={{ mt: -5, mb: 3, objectFit: "cover", height: "40%", width: "40%" }}
-        />
-      )}
-      <MKBox lineHeight={1}>
-        <MKTypography
-          display="block"
-          variant="h5"
-          fontWeight="bold"
-          // color={color === "transparent" || color === "light" ? "dark" : "white"}
-          color="black"
-          mb={-1.5}
-        >
-          {name}
-        </MKTypography>
-        <MKTypography
-          variant={image ? "caption" : "button"}
-          fontWeight="regular"
-          lineHeight={1}
-          color={color === "transparent" || color === "light" ? "text" : "white"}
-          sx={{ display: "flex", alignItems: "center" }}
-        >
-          {/* <Icon>schedule</Icon>&nbsp; */}
-          {date}
-        </MKTypography>
-      </MKBox>
+    variant={color === "transparent" ? "contained" : "gradient"}
+    bgColor={color}
+    borderRadius="xl"
+    shadow={color === "transparent" ? "none" : "md"}
+    p={3}
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      height: "100%", // Ensures equal height for all cards
+    }}
+  
+  >
+    
+    {image && (
+      <MKAvatar
+        src={image}
+        alt={name}
+        variant="rounded"
+        size="lg"
+        shadow="md"
+        sx={{ mt: -5, mb: 3, objectFit: "cover", height: "auto", width: "40%",display: "block", }}
+      />
+    )}
+
+  
+    <MKBox lineHeight={1}>
       <MKTypography
-        variant="body2"
-        color={color === "transparent" || color === "light" ? "text" : "white"}
-        my={4}
+        display="block"
+        variant="h5"
+        fontWeight="bold"
+        // color={color === "transparent" || color === "light" ? "dark" : "white"}
+        color="black"
+        mb={-1.5}
+        className="content-sub-header"
       >
-        {review}
+        {name}
       </MKTypography>
       <MKTypography
-        variant="h4"
+        variant={image ? "caption" : "button"}
+        fontWeight="regular"
+        lineHeight={1}
         color={color === "transparent" || color === "light" ? "text" : "white"}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          ml: 0.375,
-
-          "& .material-icons-round": {
-            ml: -0.375,
-          },
-        }}
+        sx={{ display: "flex", alignItems: "center" }}
       >
-        {ratings[rating]}
+        {/* <Icon>schedule</Icon>&nbsp; */}
+        {date}
       </MKTypography>
     </MKBox>
+    <MKTypography
+      variant="body2"
+      color={color === "transparent" || color === "light" ? "text" : "white"}
+      my={4}
+      className="content-body"
+    >
+      {review}
+    </MKTypography>
+    <MKTypography
+      variant="h4"
+      color={color === "transparent" || color === "light" ? "text" : "white"}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        ml: 0.375,
+
+        "& .material-icons-round": {
+          ml: -0.375,
+        },
+      }}
+    >
+      {ratings[rating]}
+    </MKTypography>
+  </MKBox>
   );
 }
 

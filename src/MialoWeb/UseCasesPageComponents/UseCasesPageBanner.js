@@ -12,7 +12,7 @@ import MKTypography from "components/MKTypography";
 import bgImage from "assets/images/mialo/usecaseBanner.png";
 // import { Box } from "@mui/material";
 // import MialoImage from "../../assets/images/Mialo.A.png";
-
+import React from "react";
 function UseCasesPageBanner() {
   return (
     <MKBox component="header" position="relative">
@@ -50,10 +50,11 @@ function UseCasesPageBanner() {
                     fontSize: size["3xl"],
                   },
                 })}
+                className="banner"
               >
                 A Unified Platform Solving a Spectrum of Use Cases
               </MKTypography>
-              <MKTypography variant="body1" color="white" opacity={0.8} pr={6} mr={6}>
+              <MKTypography variant="body1" color="white" opacity={0.8} pr={6} mr={6} className="subBanner">
                 Tackle unique business challenges and gain intelligent insights with Mialo.AI&#39;s
                 comprehensive capabilities.
               </MKTypography>

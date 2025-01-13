@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -80,11 +80,11 @@ function Faq() {
   return (
     <div style={{ paddingTop: "50px", paddingBottom: "50px" }}>
       <Container>
-        <MKTypography variant="h2" align="center" color="black" fontWeight="bold" gutterBottom>
+        <MKTypography className="content-header" variant="h2" align="center" color="black" fontWeight="bold" gutterBottom>
           Features that Make Mialo.AI Different
         </MKTypography>
         <MKBox mb={2}>
-          <MKTypography variant="body2" align="center" color="text">
+          <MKTypography className="content-body" variant="body2" align="center" color="text">
             Discover the key features that set Mialo.AI apart in the realm of Artificial
             Intelligence.
           </MKTypography>

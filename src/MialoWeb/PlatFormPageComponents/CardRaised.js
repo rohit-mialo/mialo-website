@@ -76,6 +76,7 @@ function CardRaised() {
       <div style={{ maxWidth: "1440px", margin: "auto" }}>
         <MKBox component="section" py={6}>
           <Container>
+            {/* Section Header */}
             <Grid
               container
               item
@@ -85,15 +86,26 @@ function CardRaised() {
               mx="auto"
               textAlign="center"
             >
-              <MKTypography variant="h2" mb={2} color="black">
+              <MKTypography className="content-header" variant="h2" mb={2} color="black">
                 Make Sense of Data by Leveraging
                 <br />
                 Multimodal AI
               </MKTypography>
             </Grid>
-            <Grid container spacing={3} mt={8}>
+
+            {/* Cards Section */}
+            <Grid container spacing={3} mt={8} alignItems="stretch">
               {cardData.slice(0, visibleCards).map((card, index) => (
-                <Grid item xs={12} md={8} lg={4} mb={{ xs: 3, lg: 1 }} key={index}>
+                <Grid
+                  item
+                  xs={12}
+                  md={8}
+                  lg={4}
+                  mb={2}
+                  className="card-container"
+                  key={index}
+                  style={{ display: "flex" }}
+                > 
                   <DefaultReviewCard
                     color="light"
                     image={card.image}
@@ -103,6 +115,8 @@ function CardRaised() {
                 </Grid>
               ))}
             </Grid>
+
+            {/* Load More Button */}
             {visibleCards < cardData.length && (
               <MKBox mt={3} display="flex" justifyContent="center">
                 <MKButton color="info" onClick={handleLoadMore}>

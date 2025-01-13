@@ -15,7 +15,7 @@ Coded by www.creative-tim.com
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
-
+import React from "react";
 // react-countup component
 import CountUp from "react-countup";
 
@@ -30,7 +30,7 @@ function DefaultCounterCard({ color = "info", count, title = "", description = "
         <CountUp end={count} duration={1} {...rest} />
       </MKTypography>
       {title && (
-        <MKTypography variant="h5" mt={2} mb={1} style={{ color: "#000620" }}>
+        <MKTypography variant="h5" mt={2} mb={1} style={{ color: "#000620" }} className="content-body">
           {title}
         </MKTypography>
       )}

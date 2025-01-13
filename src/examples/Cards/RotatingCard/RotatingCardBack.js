@@ -17,6 +17,7 @@ Coded by www.creative-tim.com
 import PropTypes from "prop-types";
 
 // react-router-dom components
+import React from "react";
 import { Link } from "react-router-dom";
 
 // @mui material components
@@ -47,9 +48,10 @@ function RotatingCard({ color = "#1a73e8", image, description, action }) {
         backgroundSize: "cover",
         backfaceVisibility: "hidden",
         transform: "rotateY(180deg)",
+        height: "100%"
       }}
     >
-      <MKBox pb={2} px={2} textAlign="center" lineHeight={1}>
+      <MKBox pb={2} px={2} textAlign="center" lineHeight={1} >
         <MKTypography variant="body1" color="white" opacity={0.8}>
           {description}
         </MKTypography>

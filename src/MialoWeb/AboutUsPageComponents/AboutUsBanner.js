@@ -1,7 +1,7 @@
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-
+import React from "react";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -49,6 +49,7 @@ function AboutUsBanner() {
                     fontSize: size["3xl"],
                   },
                 })}
+                className="banner"
               >
                 About Us
               </MKTypography>

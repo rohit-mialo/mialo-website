@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -34,7 +34,6 @@ import MuiLink from "@mui/material/Link";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
 
 // Material Kit 2 PRO React examples
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
@@ -48,7 +47,6 @@ function DefaultNavbar({
   routes,
   transparent = false,
   light = false,
-  action = false,
   sticky = false,
   relative = false,
   center = false,
@@ -497,40 +495,7 @@ function DefaultNavbar({
           >
             {renderNavbarItems}
           </MKBox>
-          <MKBox ml={{ xs: "auto", lg: 0 }}>
-            {action &&
-              (action.type === "internal" ? (
-                <MKButton
-                  component={Link}
-                  to={action.route}
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                >
-                  {action.label}
-                </MKButton>
-              ) : (
-                <MKButton
-                  component="a"
-                  href={action.route}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                >
-                  {action.label}
-                </MKButton>
-              ))}
-          </MKBox>
+
           <MKBox
             display={{ xs: "inline-block", lg: "none" }}
             lineHeight={0}
@@ -581,7 +546,6 @@ DefaultNavbar.propTypes = {
         "default",
         "white",
       ]),
-      label: PropTypes.string.isRequired,
     }),
   ]),
   sticky: PropTypes.bool,

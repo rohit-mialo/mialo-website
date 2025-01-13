@@ -42,6 +42,215 @@ import Speech_to_text_ from "assets/images/mialo/Speech_to_text_.png";
 import summary_generation from "assets/images/mialo/summary_generation.png";
 import Smart_Assistance from "assets/images/mialo/Smart_Assistance.png";
 import Human_Identification from "assets/images/mialo/Human_Identification.png";
+import PropTypes from "prop-types";
+
+const industryBasedUseCases = [
+  {
+    industry: "Retail",
+    useCasesId: [
+      "shopper_demographics",
+      "shopper_behavioral_analysis",
+      "footfall_intelligence",
+      "shopper_journey_analysis",
+      "service_quality_experience",
+      "automatic_visual_inspection",
+      "store_security",
+      "queue_analysis_management",
+      "entrance_exit_logs",
+      "parking_management",
+      "anomaly_detection",
+      "human_identification",
+      "people_counting",
+      "crowd_monitoring",
+      "fraud_detection",
+      "time_attendance_tracking",
+      "threat_detection_response",
+      "vehicle_access_control",
+      "authorized_employee_access",
+      "facial_recognition",
+      "invoice_processing_management",
+      "financial_statement_analysis",
+      "summary_generation",
+    ],
+  },
+  {
+    industry: "BFSI",
+    useCasesId: [
+      "entrance_exit_logs",
+      "vehicle_dwell_time",
+      "vehicle_access_control",
+      "human_identification",
+      "fraud_detection",
+      "time_attendance_tracking",
+      "threat_detection_response",
+      "vehicle_access_control",
+      "vehicle_dwell_time",
+      "authorized_employee_access",
+      "facial_recognition",
+      "document_pre_processing",
+      "invoice_processing_management",
+      "document_classification",
+      "automated_data_extraction",
+      "document_review_analysis",
+      "fraud_detection",
+      "financial_statement_analysis",
+      "summary_generation",
+      "smart_chatbot",
+    ],
+  },
+  {
+    industry: "Infrastucture",
+    useCasesId: [
+      "entrance_exit_logs",
+      "parking_management",
+      "vehicle_dwell_time",
+      "anpr_fr_based_access_control",
+      "anomaly_detection",
+      "human_identification",
+      "people_counting",
+      "crowd_monitoring",
+      "fraud_detection",
+      "visitor_management",
+      "time_attendance_tracking",
+      "threat_detection_response",
+      "intrusion_detection",
+      "authorized_employee_access",
+      "visitor_management",
+      "facial_recognition",
+      "document_pre_processing",
+      "invoice_processing_management",
+      "document_classification",
+      "automated_data_extraction",
+      "document_review_analysis",
+      "fraud_detection",
+      "financial_statement_analysis",
+    ],
+  },
+  {
+    industry: "Logistics",
+    useCasesId: [
+      "entrance_exit_logs",
+      "parking_management",
+      "vehicle_dwell_time",
+      "anpr_fr_based_access_control",
+      "human_identification",
+      "people_counting",
+      "fraud_detection",
+      "visitor_management",
+      "time_attendance_tracking",
+      "threat_detection_response",
+      "intrusion_detection",
+      "speed_monitoring",
+      "vehicle_dwell_time",
+      "ergonomic_risk_analysis",
+      "authorized_employee_access",
+      "visitor_management",
+      "facial_recognition",
+      "invoice_processing_management",
+      "document_classification",
+      "automated_data_extraction",
+      "document_review_analysis",
+      "fraud_detection",
+      "financial_statement_analysis",
+      "summary_generation",
+    ],
+  },
+  {
+    industry: "Security",
+    useCasesId: [
+      "human_identification",
+      "people_counting",
+      "crowd_monitoring",
+      "fraud_detection",
+      "visitor_management",
+      "time_attendance_tracking",
+      "threat_detection_response",
+      "intrusion_detection",
+      "anpr_fr_based_access_control",
+      "anomaly_detection",
+      "speed_monitoring",
+      "vehicle_dwell_time",
+      "authorized_employee_access",
+      "visitor_management",
+      "facial_recognition",
+      "speech_to_text",
+      "summary_generation",
+    ],
+  },
+  {
+    industry: "Healthcare",
+    useCasesId: [
+      "service_quality_experience",
+      "anpr_fr_based_access_control",
+      "people_counting",
+      "crowd_monitoring",
+      "threat_detection_response",
+      "authorized_employee_access",
+      "facial_recognition",
+      "document_pre_processing",
+      "invoice_processing_management",
+      "document_classification",
+      "automated_data_extraction",
+      "document_review_analysis",
+      "fraud_detection",
+      "financial_statement_analysis",
+      "summary_generation",
+      "smart_chatbot",
+    ],
+  },
+  {
+    industry: "Hospitality",
+    useCasesId: [
+      "service_quality_experience",
+      "automatic_visual_inspection",
+      "store_security",
+      "entrance_exit_logs",
+      "parking_management",
+      "vehicle_dwell_time",
+      "anpr_fr_based_access_control",
+      "anomaly_detection",
+      "human_identification",
+      "people_counting",
+      "crowd_monitoring",
+      "fraud_detection",
+      "visitor_management",
+      "time_attendance_tracking",
+      "threat_detection_response",
+      "facial_recognition",
+      "document_pre_processing",
+      "invoice_processing_management",
+      "document_classification",
+      "automated_data_extraction",
+      "document_review_analysis",
+      "financial_statement_analysis",
+      "summary_generation",
+    ],
+  },
+  {
+    industry: "Agriculture",
+    useCasesId: ["intrusion_detection", "anomaly_detection"],
+  },
+  {
+    industry: "Manufacturing",
+    useCasesId: [
+      "automatic_visual_inspection",
+      "entrance_exit_logs",
+      "vehicle_dwell_time",
+      "anpr_fr_based_access_control",
+      "anomaly_detection",
+      "fraud_detection",
+      "ergonomic_risk_analysis",
+      "authorized_employee_access",
+      "facial_recognition",
+      "intrusion_detection",
+      "human_identification",
+      "people_counting",
+      "crowd_monitoring",
+      "Wake_word_recognition",
+      "summary_generation",
+    ],
+  },
+];
 
 const useCasesData = [
   {
@@ -204,7 +413,7 @@ const useCasesData = [
   },
   {
     useCaseId: "anomaly_detection",
-    title: "Proactively Identify and Address Odd Activities",
+    title: "Prevent. Protect. Perform: Cutting-Edge Anomaly Detection",
     subTitle: "Anomaly Detection",
     description1:
       "Stay ahead of potential issues with our platform’s advanced computer vision capabilities to detect anomalies. Utilizing sophisticated AI algorithms, our platform continuously monitors a store’s operations to capture unusual patterns and behaviors and instantly trigger alerts.",
@@ -520,15 +729,27 @@ const useCasesData = [
   },
 ];
 
-function UseCasesPageComponents() {
+function UseCasesPageComponents(props) {
   const [useCases] = useState(useCasesData);
+  let industry = props.industry;
+
+  console.log(industry);
+
+  // Get the relevant use case IDs for the selected industry
+  const selectedIndustry = industryBasedUseCases.find((ind) => ind.industry === industry);
+  const relevantUseCaseIds = selectedIndustry ? selectedIndustry.useCasesId : [];
+
+  // Filter the use cases based on relevant IDs
+  const filteredUseCases = useCases.filter((useCase) =>
+    relevantUseCaseIds.includes(useCase.useCaseId)
+  );
 
   useEffect(() => {
-    const hash = window.location.hash; // Get the hash from the URL
+    const hash = window.location.hash;
     if (hash) {
-      const section = document.getElementById(hash.substring(1)); // Remove the '#' and get the section
+      const section = document.getElementById(hash.substring(1));
       if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" }); // Smooth scroll to the section
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
   }, []);
@@ -547,20 +768,132 @@ function UseCasesPageComponents() {
           sx={{ mx: "auto", textAlign: "center" }}
         >
           <MKTypography variant="h2" mt={3} color="black">
-            Use Cases We Solve
+            {industry ? `Use Cases We Solve For ${industry}` : "Use Cases We Solve"}
           </MKTypography>
-          {/* <MKTypography variant="body2" color="text">
-            Discover how to effectively utilize data insights to drive success and innovation.
-          </MKTypography> */}
         </Grid>
 
-        {useCases.map((useCase, index) => (
-          <div key={index} style={{ backgroundColor: "white" }}>
-            <Grid container spacing={3} alignItems="center" sx={{ mt: 6 }} id={useCase.useCaseId}>
+        {industry
+          ? filteredUseCases.map((useCase, index) => (
+              <div key={index} style={{ backgroundColor: "white" }}>
+                <Grid
+                  container
+                  spacing={3}
+                  alignItems="center"
+                  sx={{ mt: 6 }}
+                  id={useCase.useCaseId}
+                >
+                  {index % 2 === 0 ? (
+                    <>
+                      <Grid item xs={12} md={4} sx={{ ml: "auto" }}>
+                        <MKBox p={{ xs: 0, lg: 6 }}>
+                          <MKBox
+                            component="img"
+                            src={useCase.image}
+                            width={{ xs: "100%", md: "130%" }}
+                            height="auto"
+                            borderRadius="md"
+                            shadow="md"
+                          />
+                        </MKBox>
+                      </Grid>
+                      <Grid item xs={12} md={5} sx={{ mr: "auto", ml: { xs: 0, md: 6 } }}>
+                        <MKTypography variant="body2" color="text">
+                          {useCase.subTitle}
+                        </MKTypography>
+                        <MKTypography variant="h3" color="black" pb={2} py={2}>
+                          {useCase.title}
+                        </MKTypography>
+                        <MKTypography style={{ textAlign: 'justify' }} variant="body2" color="black" opacity={0.8}>
+                          {useCase.description1}
+                        </MKTypography>
+                        {useCase.items && (
+                          <ul style={{ paddingTop: "10px" }}>
+                            {useCase.items.map((item, idx) => (
+                              <li key={idx}>
+                                <MKTypography sx={{textAlign:"justify"}}  variant="body2" color="black" opacity={0.8}>
+                                  {item}
+                                </MKTypography>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {useCase.description2 && (
+                          <MKTypography variant="body2" color="black" opacity={0.8}>
+                            {useCase.description2}
+                          </MKTypography>
+                        )}
+                      </Grid>
+                    </>
+                  ) : (
+                    <>
+                      <Grid item xs={12} md={5} sx={{ ml: "auto", mr: { xs: 0, md: 6 } }}>
+                        <MKTypography variant="body2" color="text">
+                          {useCase.subTitle}
+                        </MKTypography>
+                        <MKTypography variant="h3" color="black" pb={2} py={2}>
+                          {useCase.title}
+                        </MKTypography>
+                        <MKTypography variant="body2" color="black" opacity={0.8}>
+                          {useCase.description1}
+                        </MKTypography>
+                        {useCase.items && (
+                          <ul style={{ marginTop: "8px" }}>
+                            {useCase.items.map((item, idx) => (
+                              <li key={idx}>
+                                <MKTypography sx={{textAlign:"justify"}}  variant="body2" color="black">
+                                  {item}
+                                </MKTypography>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {useCase.description2 && (
+                          <MKTypography variant="body2" color="black" opacity={0.8}>
+                            {useCase.description2}
+                          </MKTypography>
+                        )}
+                      </Grid>
+                      <Grid item xs={12} md={4} sx={{ mr: "auto" }}>
+                        <MKBox p={{ xs: 0, lg: 6 }}>
+                          <MKBox
+                            component="img"
+                            src={useCase.image}
+                            width={{ xs: "100%", md: "130%" }}
+                            height="auto"
+                            borderRadius="md"
+                            shadow="md"
+                          />
+                        </MKBox>
+                      </Grid>
+                    </>
+                  )}
+                </Grid>
+
+                {index < filteredUseCases.length - 1 && (
+                  <Divider sx={{ my: { xs: 2, sm: 8 }, mx: 12 }} />
+                )}
+              </div>
+            ))
+          : useCases.map((useCase, index) => (
+            <MKBox
+            key={index}
+            sx={{
+              backgroundColor: "white",
+              px: { xs: 2, sm: 4, md: 6 }, // Padding for mobile and larger screens
+              py: { xs: 1, sm: 1, md: 1 },
+            }}
+          >
+            <Grid
+              container
+              spacing={3}
+              alignItems="center"
+              sx={{ mt: 2 }}
+              id={useCase.useCaseId}
+            >
               {index % 2 === 0 ? (
                 <>
                   <Grid item xs={12} md={4} sx={{ ml: "auto" }}>
-                    <MKBox p={{ xs: 0, lg: 6 }}>
+                    <MKBox p={{ xs: 2, lg: 6 }}>
                       <MKBox
                         component="img"
                         src={useCase.image}
@@ -571,14 +904,14 @@ function UseCasesPageComponents() {
                       />
                     </MKBox>
                   </Grid>
-                  <Grid item xs={12} md={5} sx={{ mr: "auto", ml: { xs: 0, md: 6 } }}>
-                    <MKTypography variant="body2" color="text">
+                  <Grid item xs={12} md={7} sx={{ mr: "auto", ml: { xs: 0, md: 6 }, px: { xs: 2 } }}>
+                  <MKTypography className=" content-header solution-header"  variant="body2" color="black" >
                       {useCase.subTitle}
                     </MKTypography>
-                    <MKTypography variant="h3" color="black" pb={2} py={2}>
+                    <MKTypography className="content-sub-header" color="text" variant="h3" pb={2} py={2}>
                       {useCase.title}
                     </MKTypography>
-                    <MKTypography variant="body2" color="black" opacity={0.8}>
+                    <MKTypography style={{ textAlign: 'justify' }} className="content-body" variant="body2" color="black" opacity={0.8}>
                       {useCase.description1}
                     </MKTypography>
                     {!useCase.items && <br />}
@@ -586,7 +919,7 @@ function UseCasesPageComponents() {
                       <ul style={{ paddingTop: "10px" }}>
                         {useCase.items.map((item, idx) => (
                           <li key={idx}>
-                            <MKTypography variant="body2" color="black" opacity={0.8}>
+                            <MKTypography sx={{textAlign:"justify"}}  className="content-body" variant="body2" color="black" opacity={0.8}>
                               {item}
                             </MKTypography>
                           </li>
@@ -594,7 +927,7 @@ function UseCasesPageComponents() {
                       </ul>
                     )}
                     {useCase.description2 && (
-                      <MKTypography variant="body2" color="black" opacity={0.8}>
+                      <MKTypography style={{ textAlign: 'justify' }} className="content-body" variant="body2" color="black" opacity={0.8}>
                         {useCase.description2}
                       </MKTypography>
                     )}
@@ -602,21 +935,21 @@ function UseCasesPageComponents() {
                 </>
               ) : (
                 <>
-                  <Grid item xs={12} md={5} sx={{ ml: "auto", mr: { xs: 0, md: 6 } }}>
-                    <MKTypography variant="body2" color="text">
+                  <Grid item xs={12} md={7} sx={{ ml: "auto", mr: { xs: 0, md: 6 }, px: { xs: 2 } }}>
+                    <MKTypography className=" content-header solution-header"  variant="body2" color="black" >
                       {useCase.subTitle}
                     </MKTypography>
-                    <MKTypography variant="h3" color="black" pb={2} py={2}>
+                    <MKTypography className="content-sub-header" color="text" variant="h3" pb={2} py={2}>
                       {useCase.title}
                     </MKTypography>
-                    <MKTypography variant="body2" color="black" opacity={0.8}>
+                    <MKTypography style={{ textAlign: 'justify' }} className="content-body" variant="body2" color="black" opacity={0.8}>
                       {useCase.description1}
                     </MKTypography>
                     {useCase.items && useCase.items.length > 0 && (
                       <ul style={{ marginTop: "8px" }}>
                         {useCase.items.map((item, idx) => (
                           <li key={idx}>
-                            <MKTypography variant="body2" color="black">
+                            <MKTypography sx={{textAlign:"justify"}}  className="content-body" variant="body2" color="black" opacity={0.8}>
                               {item}
                             </MKTypography>
                           </li>
@@ -624,13 +957,13 @@ function UseCasesPageComponents() {
                       </ul>
                     )}
                     {useCase.description2 && (
-                      <MKTypography variant="body2" color="black" opacity={0.8}>
+                      <MKTypography style={{ textAlign: 'justify' }} className="content-body" variant="body2" color="black" opacity={0.8}>
                         {useCase.description2}
                       </MKTypography>
                     )}
                   </Grid>
                   <Grid item xs={12} md={4} sx={{ mr: "auto" }}>
-                    <MKBox p={{ xs: 0, lg: 6 }}>
+                    <MKBox p={{ xs: 2, lg: 6 }}>
                       <MKBox
                         component="img"
                         src={useCase.image}
@@ -645,12 +978,16 @@ function UseCasesPageComponents() {
               )}
             </Grid>
 
-            {index < useCases.length - 1 && <Divider sx={{ my: { xs: 2, sm: 8 }, mx: 12 }} />}
-          </div>
-        ))}
+            {index < useCases.length - 1 && <Divider sx={{ my: { xs: 2, sm: 8 }, mx: 12, borderWidth: 2 }} />}
+          </MKBox>
+          ))}
       </Container>
     </MKBox>
   );
 }
+
+UseCasesPageComponents.propTypes = {
+  industry: PropTypes.string,
+};
 
 export default UseCasesPageComponents;
