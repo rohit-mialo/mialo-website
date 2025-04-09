@@ -80,13 +80,12 @@ function HeaderOne({ onButtonClick }) {
                 mr={6}
                 className="subBanner"
               >
-                Redefine the way your business analyzes data to optimize processes and automate
-                tasks with Mialo.AI platform.
+                Redefine how your business analyzes data to optimize processes and automate tasks with the Mialo.AI platform.
               </MKTypography>
               <Stack direction="row" spacing={1} mt={3}>
                 {/* <MKButton color="info">Book a Demo</MKButton> */}
                 <MKButton color="info" onClick={onButtonClick}>
-                  Talk to Us
+                  Know more
                 </MKButton>
               </Stack>
             </Grid>

@@ -16,6 +16,7 @@ import React from "react";
 import AboutUs from "MialoWeb/AboutUs";
 import ContactUs from "MialoWeb/ContactUs";
 import Platform from "MialoWeb/Platform";
+import Blog from "MialoWeb/BlogPage"
 
 /** 
   All of the routes for the Material Kit 2 PRO React React are added here,
@@ -373,6 +374,11 @@ const routes = [
     name: "About us",
     route: "/aboutus",
     component: <AboutUs />,
+  },
+  {
+    name: "Blog",
+    route: "/blog",
+    component: <Blog />,
   },
   {
     name: "Contact Us",

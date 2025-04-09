@@ -16,7 +16,7 @@ function HeaderTwo({ onButtonClick }) {
 
   useEffect(() => {
     const typedJS = new Typed(typedJSRef.current, {
-      strings: ["Automation", "Decision Intelligence"],
+      strings: ["AI-Powered Analytics", "Decision Intelligence"],
       typeSpeed: 70,
       backSpeed: 70,
       backDelay: 200,
@@ -190,7 +190,7 @@ function HeaderTwo({ onButtonClick }) {
               style={{ zIndex: 1 }}
               className="banner"
             >
-              Unlock New Level of
+             Unlock a New Level of
               <br /> <span ref={typedJSRef} /> <br /> with Multimodal AI
             </MKTypography>
             <MKTypography
@@ -202,15 +202,14 @@ function HeaderTwo({ onButtonClick }) {
               style={{ zIndex: 1 }}
               className="subBanner"
             >
-              Leverage multimodal AI for ‘X’ Analytics, integrating intelligence and automation
-              across business workflows.
+              Leverage multimodal AI for ‘X’ Analytics, integrating AI-driven intelligence, automation, and deep learning across various business workflows.
             </MKTypography>
             <div style={{ zIndex: 1 }}>
               {/* <MKButton color="white" style={{ marginRight: 10 }}>
                 Book a Demo
               </MKButton> */}
               <MKButton color="white" onClick={()=>onButtonClick()}>
-                Talk to Us
+                Know More
               </MKButton>
             </div>
           </Grid>

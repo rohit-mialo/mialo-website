@@ -25,13 +25,13 @@ const cardData = [
   {
     frontImage: anpr,
     icon: "touch_app",
-    title: "Automatic Number  Plate Recognition",
+    title: "Automatic Number  Plate Recognition (ANPR)",
     description:
       "All the MUI components that you need in development have been re-designed with the new look.",
     backImage: anpr,
     backTitle: "Discover More",
     backDescription:
-      "Automatic Number Plate Recognition technology used to identify and track vehicles by reading license plates.",
+      "Track and manage vehicles efficiently using AI-powered license plate recognition for smart parking and law enforcement. ",
     action: { type: "internal", route: "/", label: "start with header" },
   },
   {
@@ -54,7 +54,7 @@ const cardData = [
     backImage: peopleFlow,
     backTitle: "Explore More",
     backDescription:
-      "Analytics technology that tracks and analyzes the movement and patterns of people within a specific area.",
+      "Monitor and analyze human movement patterns with AI-powered footfall tracking for retail, smart cities, and security applications. ",
     action: { type: "internal", route: "/", label: "learn more" },
   },
   {
@@ -66,7 +66,7 @@ const cardData = [
     backImage: wake,
     backTitle: "Explore More",
     backDescription:
-      "A system that listens for a specific keyword or phrase to activate voice-controlled devices or applications.",
+      "Enable hands-free voice interactions with AI-powered wake word detection for smart assistants and voice automation. ",
     action: { type: "internal", route: "/", label: "learn more" },
   },
   {
@@ -78,19 +78,19 @@ const cardData = [
     backImage: document,
     backTitle: "Explore More",
     backDescription:
-      "Gain valuable insights and real-time outcomes by transforming your voice data into actionable information.",
+      "Extract, analyze, and process structured and unstructured data through AI-driven document parsing, OCR, and automation. ",
     action: { type: "internal", route: "/", label: "learn more" },
   },
   {
     frontImage: llm,
     icon: "touch_app",
-    title: "Large  Language Model",
+    title: "Large  Language Model  (LLM)",
     description:
       "All the MUI components that you need in development have been re-designed with the new look.",
     backImage: llm,
     backTitle: "Explore More",
     backDescription:
-      "Drive applications such as chatbots, text generation, and more to significantly enhance natural language processing capabilities.",
+      "Enhance customer support and workflow automation with AI-driven chatbots, voice assistants, and NLP-powered solutions.",
     action: { type: "internal", route: "/", label: "learn more" },
   },
   // Add as many objects as needed here

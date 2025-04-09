@@ -11,7 +11,7 @@ import InfoBackgroundCard from "examples/Cards/BackgroundCards/InfoBackgroundCar
 import { useState } from "react";
 
 //image
-import img1 from "assets/images/mialo/BFSI.png";
+// import img1 from "assets/images/mialo/BFSI.png";
 import img2 from "assets/images/mialo/Agriculture.png";
 import img3 from "assets/images/mialo/Security.png";
 import img4 from "assets/images/mialo/Hospitality.png";
@@ -19,20 +19,22 @@ import img5 from "assets/images/mialo/Logistics.png";
 import img6 from "assets/images/mialo/Infrastructure.png";
 import img7 from "assets/images/mialo/Manufacturing.png";
 import img8 from "assets/images/mialo/Healthcare.png";
-import img9 from "assets/images/mialo/Retail.png";
+// import img9 from "assets/images/mialo/Retail.png";
+import mg11 from "assets/images/mialo/bfsi.png"
+import img10 from "assets/images/mialo/video-analytics-software-how-retailers-should-use-cameras.jpg"
 import MKButton from "components/MKButton";
 
 /// Updated industryData with links
 const industryData = [
   {
-    image: img9,
+    image: img10,
     icon: "import_contacts",
     title: "Retail",
     label: "257 spots",
     link: "#/IndustriesUseCase?industry=Retail", // Link to the Retail page
   },
   {
-    image: img1,
+    image: mg11,
     icon: "festival",
     title: "BFSI",
     label: "117 spots",

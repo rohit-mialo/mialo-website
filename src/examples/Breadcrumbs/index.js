@@ -28,7 +28,7 @@ import MKTypography from "components/MKTypography";
 
 function Breadcrumbs({ routes, ...rest }) {
   return (
-    <MKBox bgColor="light" borderRadius="md" py={1} px={2} width="100%">
+    <MKBox bgColor="white" borderRadius="md" py={1} px={2} width="100%">
       <MuiBreadcrumbs {...rest}>
         {routes.map(({ label, route }) =>
           route ? (

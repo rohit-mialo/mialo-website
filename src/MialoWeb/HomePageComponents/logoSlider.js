@@ -2,9 +2,12 @@ import React from "react";
 import cloudhop from "assets/images/mialo/cloudhop-removebg-preview.png";
 import Emisoft from "assets/images/mialo/Emisoft-removebg-preview.png";
 import Nasscom from "assets/images/mialo/Nasscom-removebg.png";
+import ABC from "assets/images/mialo/abcData-removebg-preview.png"
+import CopyCat from "assets/images/mialo/copy-cat-group-removebg-preview.png"
+import digimaker from "assets/images/mialo/digiMaker-removebg-preview.png"
 
 const Slider = () => {
-  const images = [cloudhop, Emisoft, Nasscom];
+  const images = [cloudhop, Emisoft, Nasscom, ABC , CopyCat, digimaker];
 
   const duplicatedImages = [...images, ...images, ...images, ...images, ...images]; // To create seamless scrolling effect
 

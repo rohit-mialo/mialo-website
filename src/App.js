@@ -8,7 +8,7 @@ import routes from "routes";
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-
+import BlogPostPage from "MialoWeb/BlogPostPage";
 // Material Kit 2 PRO React themes
 import theme from "assets/theme";
 import ScrollToHash from "pages/ScrollToHash";
@@ -80,6 +80,7 @@ export default function App() {
           <Route path="/usecases" element={<UseCases />} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/IndustriesUseCase" element={<IndustriesUseCase />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
         </Routes>
       </Suspense>
     </ThemeProvider>

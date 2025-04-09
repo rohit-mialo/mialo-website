@@ -20,7 +20,7 @@ const cardData = [
     image: img1,
     title: "Shopper Analytics",
     description:
-      "Unlock actionable insights into customer behavior, demographics, and buying journeys to optimize retail strategies.",
+      "Gain AI-powered retail insights with customer behavior tracking, footfall analysis, and demographic analytics to optimize marketing and sales strategies.",
     route: "/solutions#shopper-analytics",
   },
   {
@@ -28,8 +28,7 @@ const cardData = [
     title: "Smart Parking",
     description: (
       <>
-        Optimize vehicle management for a seamless and efficient parking experience, eliminating
-        hassles and enhancing overall convenience.
+        Optimize urban mobility and vehicle management with AI-powered smart parking solutions that eliminate congestion and enhance efficiency.
       </>
     ),
     route: "/solutions#smart-parking",
@@ -38,28 +37,28 @@ const cardData = [
     image: img2,
     title: "Generative & Conversational AI",
     description:
-      "Enhance interactions by comprehending and processing language nuances, boosting efficiency in real-time communication.",
+      "Improve customer interactions and business automation with AI-powered chatbots, NLP-driven assistants, and real-time voice recognition.",
     route: "/solutions#generative-ai",
   },
   {
     image: img4,
     title: "Smart Security",
     description:
-      "Ensure complete security across your premises by monitoring objects and people in real-time and making intelligent, informed decisions using Artificial Intelligence.",
+      "Ensure AI-driven security monitoring with computer vision-based object detection, intrusion detection, and facial recognition AI for real-time surveillance solutions.",
     route: "/solutions#smart-security",
   },
   {
     image: img5,
     title: "Access Control",
     description:
-      "Simplify access management for humans and vehicles leveraging Facial Recognition & Number Plate Reading technology, respectively to prevent unauthorized access.",
+      "Strengthen building security and perimeter access management with AI-powered facial recognition, number plate recognition (LPR), and automated access control.",
     route: "/solutions#access-control",
   },
   {
     image: img6,
     title: "AI-Powered Document Processing",
     description:
-      "Extract, analyze, and process structured and unstructured data from various types of documents through automation.",
+      "Automate data extraction, text analytics, and intelligent document processing to streamline financial, healthcare, and enterprise workflows. ",
     route: "/solutions#document-processing",
   },
 ];

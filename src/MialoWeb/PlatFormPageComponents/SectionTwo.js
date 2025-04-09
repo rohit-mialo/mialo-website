@@ -60,7 +60,7 @@ function SectionTwo() {
                   },
                 })}
               >
-                Turn Ambiguous, Siloed Multimodal Data into Reusable Resource
+                Transform Multimodal Data into a Reusable Asset
               </MKTypography>
                 <MKTypography
                 

@@ -37,7 +37,7 @@ function BlogPostThree() {
     "https://images.unsplash.com/photo-1444877466744-dc2f2af2b931?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80";
 
   return (
-    <MKBox component="section" py={7}>
+    <MKBox component="section" bgColor="white" py={7}>
       <Container>
         <Grid container spacing={3}>
           <Grid item xs={12} lg={4} mb={{ xs: 3, lg: 0 }}>

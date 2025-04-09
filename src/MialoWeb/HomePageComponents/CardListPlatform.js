@@ -77,7 +77,7 @@ const CardGrid = styled.div`
 `;
 
 // Main Component to Display the Cards
-const CardList = () => {
+const CardListPlatform = () => {
   const navbarHeight = 90;
 
   const scrollToSection = (id) => {
@@ -110,68 +110,68 @@ const CardList = () => {
       icon: <FaCog />,
       title: (
         <>
-          Pre-built
-          <br /> AI Blocks
+          Pre-built AI Blocks
+          <br /> for High-Performance Analytics
         </>
       ),
       description:
-        "Our pretrained AI models specialize in computer vision, deep learning for video analytics, NLP, speech analytics, and real-time threat detection, making AI adoption seamless across industries. ",
+        "Leverage AI-driven video analytics, cybersecurity, and deep learning for security, smart cities, retail, and automation with reliable algorithms ensuring accuracy across domains.",
     },
     {
       icon: <FaPlug />,
       title: (
         <>
           Seamless
-          <br /> Integration and Development
+          <br />Integration & Open Standards
         </>
       ),
       description:
-        "Easily integrate AI-powered video analytics, smart security systems, and intelligent automation with our robust APIs and connectors to match your unique business needs.",
+        "Seamlessly integrate Mialo.AI with VMS, security platforms, and IT ecosystems using open standards for interoperability and future-proof adaptability.",
     },
     {
       icon: <FaCloud />,
       title: (
         <>
-          Flexible <br />
+          Scalable & Flexible <br />
           Deployment
         </>
       ),
       description:
-        "Deploy AI solutions where they work best—on-premise, cloud, or edge AI environments—for real-time processing and AI-driven insights. ",
-    },
-    {
-      icon: <FaDollarSign />,
-      title: (
-        <>
-          Flexible <br />
-          Buying Options
-        </>
-      ),
-      description:
-        "Choose between SaaS-based AI analytics subscriptions or one-time AI solution purchases, tailored to your business needs and budget. ",
-    },
-    {
-      icon: <FaShieldAlt />,
-      title: (
-        <>
-          Privacy
-          <br />
-          Preserving AI
-        </>
-      ),
-      description:
-        "Ensure compliance with data privacy regulations while leveraging AI-powered security surveillance, facial recognition, and license plate recognition (LPR).",
+        "Deploy Mialo.AI on-premise, or edge with seamless GPU management to handle large-scale video processing and analytics workloads efficiently.  ",
     },
     {
       icon: <FaRocket />,
       title: (
         <>
-          Rapid <br />
-          Frontend
+          Ease of Use &  <br />
+          Rapid Implementation
         </>
       ),
       description:
-        "Accelerate your AI-powered applications with fast frontend UI development for an intuitive, user-friendly AI experience. ",
+        "Designed with user-friendly AI tools, low-code interfaces, and quick deployment options, Mialo.AI minimizes implementation time while ensuring maximum productivity.",
+    },
+    {
+      icon: <FaShieldAlt />,
+      title: (
+        <>
+          Cybersecurity & Responsible
+          <br />
+          AI Compliance
+        </>
+      ),
+      description:
+        "Mialo.AI ensures cybersecurity, compliance, and ethical AI, safeguarding data privacy across finance, healthcare, and government sectors.",
+    },
+    {
+      icon: <FaDollarSign />,
+      title: (
+        <>
+          Scalability & <br />
+          Future Roadmap 
+        </>
+      ),
+      description:
+        "Mialo.AI's AI roadmap drives continuous innovation with deep learning, real-time analytics, and industry-specific AI solutions.",
     },
   ];
 
@@ -210,4 +210,4 @@ const CardList = () => {
   );
 };
 
-export default CardList;
+export default CardListPlatform;

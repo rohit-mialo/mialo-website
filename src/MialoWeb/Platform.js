@@ -12,7 +12,8 @@ import FooterThress from "./HomePageComponents/FooterThress";
 // import Gallery from "./PlatFormPageComponents/Gallery";
 import ContactForPlatform from "./PlatFormPageComponents/ContactForPlatform";
 import NumberSection from "./HomePageComponents/NumberSection";
-import CardList from "./HomePageComponents/CardList";
+import CardListPlatform from "./HomePageComponents/CardListPlatform";
+// import CardList from "./HomePageComponents/CardList";
 import CardGrid from "./HomePageComponents/CardGrid";
 import Testimonials from "./HomePageComponents/Testimonials";
 import AiBlocks from "./PlatFormPageComponents/AiBlocks";
@@ -44,7 +45,7 @@ function Platform() {
     if (testimonialsRef.current) {
       const targetPosition =
         testimonialsRef.current.getBoundingClientRect().top + window.scrollY + (clickCount === 0 ? 250 : 100);
-      
+
       window.scrollTo({ top: targetPosition, behavior: "smooth" });
       setClickCount(prevCount => prevCount + 1); // Increment the click count after each click
     }
@@ -75,7 +76,7 @@ function Platform() {
       <NumberSection />
       <SectionTwo />
       <Faq />
-      <CardList />
+      <CardListPlatform />
       <CardRaised />
       <AiBlocks />
       <CardGrid />
@@ -93,5 +94,5 @@ function Platform() {
     </div>
   );
 }
-  
+
 export default Platform;

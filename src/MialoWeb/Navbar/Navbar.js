@@ -301,8 +301,17 @@ const CustomNavbar = ({ onNavigate }) => {
               onMouseEnter={() => navColor(4)}
               onMouseLeave={navColorLeave}
               as={Link}
-              to="/contactUs"
+              to="/blog"
               style={{ color: navbarColor === 4 ? "#5ce1e6" : "white", textDecoration: "none", fontSize: "18px" }}
+            >
+              Blog
+            </Nav.Link>
+            <Nav.Link
+              onMouseEnter={() => navColor(5)}
+              onMouseLeave={navColorLeave}
+              as={Link}
+              to="/contactUs"
+              style={{ color: navbarColor === 5 ? "#5ce1e6" : "white", textDecoration: "none", fontSize: "18px" }}
             >
               Contact us
             </Nav.Link>

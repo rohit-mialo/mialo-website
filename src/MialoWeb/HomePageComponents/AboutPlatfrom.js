@@ -36,9 +36,9 @@ function AboutPlatform() {
                 style={{ color: "black" }}
                 className="content-sub-header"
               >
-                Power up Your Multimodal Data with our
+               Power Up Your Multimodal Data with our
                 <br /> Feature-Rich AI Platform for
-                <br /> ‘X’ Analytics
+                <br /> AI-Powered Analytics 
               </MKTypography>
 
               {/* <MKTypography
@@ -97,7 +97,7 @@ function AboutPlatform() {
                     transform: "translateX(6px)",
                   },
                 }}>
-                EXPLORE MORE
+                EXPLORE
                 <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
               </MKButton>
 

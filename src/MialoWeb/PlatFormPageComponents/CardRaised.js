@@ -25,42 +25,42 @@ function CardRaised() {
       image: img1,
       title: "Derive Insights from Images",
       description:
-        "Extracts actionable insights from images and empowers businesses to make informed decisions.",
+        "Extract actionable insights from images to make informed decisions with computer vision and AI-powered video analytics. ",
       route: "/sections/page-sections/general-cards",
     },
     {
       image: img2,
       title: "Object Detection & Tracking",
       description:
-        "Detects & tracks objects in images or videos, enabling real-time surveillance & analysis.",
+        "Detect and track objects in images or videos, enabling real-time AI surveillance, anomaly detection, and security analytics. ",
       route: "/sections/page-sections/general-cards",
     },
     {
       image: img3,
       title: "Image Classification",
       description:
-        "Offers facial detection & recognition capabilities, enhancing security and user experience.",
+        "Enhance facial recognition, automated identity verification, and AI-powered security analytics with deep learning. ",
       route: "/sections/page-sections/general-cards",
     },
     {
       image: img4,
       title: "Anomaly Detection",
       description:
-        "Identifies unusual patterns in visual data, allowing businesses to detect and mitigate potential issues before they escalate.",
+        "Identify unusual patterns in visual data, allowing businesses to detect and mitigate potential issues before they escalate using AI-driven video surveillance. ",
       route: "/sections/page-sections/general-cards",
     },
     {
       image: img5,
       title: "Scene Understanding",
       description:
-        "Interprets the content and context of scenes, allowing for more intelligent automation and in-depth analytics.",
+        "Interpret the content and context of scenes with AI-powered video analytics for smart cities, security, and automation. ",
       route: "/sections/page-sections/general-cards",
     },
     {
       image: img6,
       title: "Facial Detection & Recognition",
       description:
-        "Enhances security & ensures personalized experiences for users using face detection and recognition capabilities.",
+        "Enhance security, access control, and personalized customer experiences using AI-powered facial recognition technology. ",
       route: "/sections/page-sections/general-cards",
     },
     // Add more card data as needed
