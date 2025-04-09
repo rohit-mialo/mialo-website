@@ -7,60 +7,31 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 // Images
-// import bgImage from "assets/images/mialo/about_us.png";
+import bgImage from "assets/images/mialo/about_us.png";
 
-import bgVideo from "assets/images/blogImage/bannerVideo.mp4"; // adjust this path accordingly
+// import bgVideo from "assets/images/blogImage/bannerVideo.mp4"; // adjust this path accordingly
 
 function BlogBanner() {
   return (
     <MKBox component="header" position="relative">
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: -1,
-        }}
-      >
-        <source src={bgVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Overlay (optional gradient) */}
-      <MKBox
-        position="absolute"
-        top={0}
-        left={0}
-        width="100%"
-        height="100%"
-        sx={({ palette: { gradients }, functions: { linearGradient, rgba } }) => ({
-          background: linearGradient(
-            rgba(gradients.dark.main, 0.8),
-            rgba(gradients.dark.state, 0.8)
-          ),
-          zIndex: 0,
-        })}
-      />
-
-      {/* Content */}
       <MKBox
         display="flex"
         alignItems="center"
-        justifyContent="center"
+        justifyContent="center" // Center content horizontally
         minHeight="78vh"
-        position="relative"
-        zIndex={1}
+        sx={{
+          backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
+            `${linearGradient(
+              rgba(gradients.dark.main, 0.1),
+              rgba(gradients.dark.state, 0.1)
+            )}, url(${bgImage})`,          
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <Container>
           <Grid container spacing={3} justifyContent="center" alignItems="center">
+            {" "}
             <Grid
               item
               xs={12}
@@ -69,7 +40,7 @@ function BlogBanner() {
               display="flex"
               flexDirection="column"
               justifyContent="center"
-              textAlign="center"
+              textAlign="center" // Center text inside the Grid item
             >
               <MKTypography
                 variant="h1"
@@ -91,6 +62,5 @@ function BlogBanner() {
     </MKBox>
   );
 }
-
 
 export default BlogBanner;
