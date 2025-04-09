@@ -7,7 +7,7 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 // Images
-import bgImage from "assets/images/mialo/about_us.png";
+import bgImage from "assets/images/blogImage/banner.png";
 
 // import bgVideo from "assets/images/blogImage/bannerVideo.mp4"; // adjust this path accordingly
 
